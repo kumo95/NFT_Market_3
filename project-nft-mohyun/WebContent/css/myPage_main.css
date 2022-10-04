@@ -1,0 +1,189 @@
+@import "reset.css";
+
+@media ( min-width: 1400px ) {
+    body { color: red; }
+  }
+
+*{
+    box-sizing: border-box;
+}
+
+hr{
+    height: 1px;
+    background-color: black;
+    border: 0px;
+    margin: 0px;
+    width: 1260px;
+}
+
+#title-mypage{
+    margin: 0px 0px 0px 70px;
+    padding-top: 50px;
+}
+
+.div-icon-Content{
+    display: flex;
+}
+.icon-area{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    margin-left: 100px;
+}
+
+
+.div-userinfo{
+    background-color: #f0f0f0f0;
+    width: 1260px;
+}
+
+#userIcon{
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+}
+
+.description-area{
+    margin-left: 50px;
+    padding-top: 60px;
+    width: 400px;
+
+}
+
+.description-area :nth-child(1) strong{
+    font-size: 4em;
+}
+
+.artwortk-area{
+    padding-left: 20px;
+}
+
+.community-area{
+    display: flex;
+    padding: 120px 40px 40px 40px;
+    text-align: center;
+}
+
+.community-area > div{
+    margin-right: 20px;
+}
+
+.community-area div div{
+    margin-bottom: 5px;
+}
+
+.community-icons{
+    width: 50px;
+    height: 50px;
+}
+
+.div-nav-Content{
+    display: flex;
+    width: 1260px;
+}
+
+.navbar-area{
+    margin: 50px 30px 20px 70px;
+    
+}
+
+#title-navbar{
+    margin: 0px 0px 10px 0px;
+    font-size: 24px;
+}
+
+.navbar-items{
+    margin-top: 2px;
+    font-size: 16px;
+    line-height: 40px;
+
+}
+
+a.navbar-items{
+    display: flex;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+a:link {
+    color : gray;
+  }
+  a:visited {
+    color : gray;
+  }
+  a:hover {
+    color : blue;
+    text-decoration: underline;
+  }
+  a:active {
+    color : green;
+  }
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.content-area{
+    margin: 40px 0px 20px 20px;
+    width: 950px;
+}
+
+.content-title-list{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    height: 30px;
+    margin-top: 15px;
+    line-height: 30px;
+    padding-right: 30px;
+}
+
+.content-title-list h2{
+    margin: 0px;
+}
+
+.content-title-list a{
+    text-decoration: none;
+    padding-top: 5px;
+}
+
+.mypage-table {
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    border: 1px solid black;
+    width: 900px;
+}
+
+#cart-table{
+    margin-bottom: 10px;
+}
+
+#cart-button{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 30px;
+    margin-bottom: 100px;
+}
+
+.checkbox-area{
+    width: 30px !important;
+    padding: 0px !important;
+}
+
+.mypage-table th{
+    width: 120px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.mypage-table td{
+    width: 120px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
