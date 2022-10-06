@@ -12,8 +12,8 @@
 	<h2>아이디 중복확인</h2>
 
 	<form action="checkId.do" name="frm">
-		아이디 <input type="text" name="userid" value="${userid}"> <input
-			type="submit" value="중복체크"><br> ${message}
+		아이디 <input type="text" name="userid" value="${userid}">
+		<input type="submit" value="중복체크"><br> ${message}
 
 		<!-- 사용 불가능한 아이디인 경우 -> 사용 버튼 미생성 -->
 		<c:if test="${result==1}">

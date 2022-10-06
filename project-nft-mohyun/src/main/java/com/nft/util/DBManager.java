@@ -11,6 +11,13 @@ import javax.sql.DataSource;
 
 public class DBManager {
 	
+//	DBCP 설정 참고
+//	<Resource auth="Container"
+//	driverClassName="oracle.jdbc.OracleDriver" maxIdle="10"
+//	maxTotal="20" maxWaitMillis="-1" name="jdbc/myoracle"
+//	password="1234" type="javax.sql.DataSource"
+//	url="jdbc:oracle:thin:@127.0.0.1:1521:orcl" username="ora_user" />
+	
 	// DB연결
 	public static Connection getConnection() {
 		Connection conn = null;

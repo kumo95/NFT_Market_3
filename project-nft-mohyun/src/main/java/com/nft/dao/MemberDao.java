@@ -29,13 +29,13 @@ public class MemberDao {
 	// 로그인(사용자 인증) : select
 	// 입력값 : 로그인 페이지에서 입력받은 사용자 아이디와 비밀번호 
 	// 반환값 : result (1:암호일치) (0:암호불일치) (-1: DB에 사용자 아이디 없음)
-	public int checkUser(String userid, String id_pwd) {
+	public int checkUser(String userid, String idPwd) {
 		int result = -1;
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;		
-		String sql = "select pwd from NFT_MEMBER where userid=?";
+		String sql = "select idPwd from NFT_MEMBER where userid=?";
 		
 		try {
 			// DBManager에 정의된 DB연결 함수
@@ -54,7 +54,7 @@ public class MemberDao {
 			if(rs.next()){
 //				System.out.println(rs.getString("pwd"));
 				// 아이디/암호 비교 후 페이지 이동
-				if(rs.getString("id_pwd") != null && rs.getString("id_pwd").equals(id_pwd)) {
+				if(rs.getString("idPwd") != null && rs.getString("idPwd").equals(idPwd)) {
 					result = 1;		// 암호 일치
 				} else {
 					result = 0;		// 암호 불일치
@@ -152,8 +152,8 @@ public class MemberDao {
 				mVo.setIdPwd(rs.getString("idPwd"));
 				mVo.setBirth(rs.getString("birth"));
 				mVo.setGender(rs.getString("gender"));
-				mVo.setE_wallet(rs.getString("email"));
-				mVo.setE_walletPwd(rs.getString("emailPwd"));
+				mVo.setE_wallet(rs.getString("e_wallet"));
+				mVo.setE_walletPwd(rs.getString("e_walletPwd"));
 				mVo.setNationPhone(rs.getString("nationPhone"));
 				mVo.setPhone(rs.getString("phone"));
 				mVo.setEmail_agree(rs.getInt("email_agree"));
@@ -164,6 +164,7 @@ public class MemberDao {
 		} catch(Exception e) {			
 			e.printStackTrace();
 		} finally {
+			// 사용한 리소스 해제
 			DBManager.close(conn, pstmt, rs);
 		}	
 		// mVo값을 리턴값으로 설정
@@ -175,38 +176,33 @@ public class MemberDao {
 	// 반환값 : 성공여부
 	public int updateMember(MemberVo mVo) {
 		int result = -1;
-		String sql = "update NFT_MEMBER set pwd=?, email=?, phone=?, admin=? where userid=?";
+		String sql = "update NFT_MEMBER set idPwd=?, e_walletPwd=?, phone=?, email_agree=?, phone_agree=? where userid=?";
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			// DBManager에 정의된 DB연결 함수
+			// JDBC 드라이버 로드 및 데이터 베이스 연결 객체 생성
 			conn = DBManager.getConnection();
 			
-			// (3 단계) Statement 객체 생성
+			// Statement 객체 생성
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mVo.getIdPwd());
 			pstmt.setString(2, mVo.getE_walletPwd());
 			pstmt.setString(3, mVo.getPhone());
-			pstmt.setInt(4, mVo.getAdmin());
-			pstmt.setString(5, mVo.getUserid());
-						
+			pstmt.setInt(4, mVo.getEmail_agree());
+			pstmt.setInt(5, mVo.getPhone_agree());
+			pstmt.setString(6, mVo.getUserid());
 			
-			// (4 단계) SQL문 실행 및 결과 처리 => executeUpdate : 수정(update)
+			// SQL문 실행 및 결과 처리 => executeUpdate : 수정(update)
 			result = pstmt.executeUpdate();
 
 		} catch(Exception e) {			
 			e.printStackTrace();
 		} finally {
+			// 사용한 리소스 해제
 			DBManager.close(conn, pstmt);
-//			try {
-//				//(5 단계) 사용한 리소스 해제
-//				pstmt.close();
-//				conn.close();
-//			} catch(SQLException e) {
-//				System.out.println(e.getMessage());
-//			}
 		}		
 		
 		return result;
@@ -217,21 +213,22 @@ public class MemberDao {
 	// 반환값 : userid가 DB에 존재 여부, result(-1:사용가능 / 1:중복)
 	public int confirmID(String userid) {
 		int result = -1;
-		String sql ="select userid from member where userid=?";
+		String sql ="select userid from NFT_MEMBER where userid=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try {
 			// DBManager에 정의된 DB연결 함수
+			// JDBC 드라이버 로드 및 데이터 베이스 연결 객체 생성
 			conn = DBManager.getConnection();
 			
-			// (3 단계) Statement 객체 생성
+			// Statement 객체 생성
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userid);
 			
 			
-			// (4 단계) SQL문 실행 및 결과 처리 => executeQuery : 조회(select)
+			// SQL문 실행 및 결과 처리 => executeQuery : 조회(select)
 			rs = pstmt.executeQuery();
 			
 			// rs.next() : 다음 행(row)을 확인, rs.getString("컬럼명")
@@ -244,6 +241,7 @@ public class MemberDao {
 		} catch(Exception e) {			
 			e.printStackTrace();
 		} finally {
+			// 사용한 리소스 해제
 			DBManager.close(conn, pstmt, rs);
 		}		
 	
