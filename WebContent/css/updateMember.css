@@ -1,0 +1,60 @@
+@import "reset.css";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    /* background-color: #F0F0F0; */
+}
+
+hr{
+    height: 3px;
+    background-color: #cac6c6;
+    border: 0px;
+    width:1216px;
+}
+
+.main-content{
+    width: 1280px;
+}
+
+#content-title{
+    margin: 20px 10px 20px 50px;
+}
+
+.content-divide{
+    display: flex;
+}
+
+.content-left{
+    margin: 20px 10px 20px 50px;
+    width: 20%;
+}
+
+.content-right{
+    margin: 20px 10px 20px 10px;
+    width: 80%;
+}
+
+div.content-password td{
+    width: 200px;
+    height: 23px;
+}
+
+.content-agree-left{
+    width: 50%;
+}
+
+.content-agree-right{
+    width: 50%;
+}
+
+#content-submit{
+    text-align: center;
+}
+
+#button-area{
+    width: 1280px;
+}

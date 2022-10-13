@@ -1,0 +1,141 @@
+@import "reset.css";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    /* background-color: #F0F0F0; */
+}
+
+.index-title{
+    margin: 0px 0px 20px 0px;
+}
+
+hr{
+    height: 3px;
+    background-color: #cac6c6;
+    border: 0px;
+    width: 95%;
+}
+
+.info-area{
+    background-color: #F0F0F0;
+    height: 370px;
+    padding: 40px 40px 40px 70px;
+}
+
+#content-title{
+    margin: 20px 10px 10px 50px;
+}
+
+#content-title-info{
+    margin: 10px 10px 20px 50px;
+}
+
+.total-content-divide{
+    display: flex;
+    margin: 0px 83px 0px 83px;
+    width: 1100px;
+}
+
+.left-content-id{
+    width: 50%;
+    margin: 20px 15px 20px 10px;
+}
+
+.right-content-pwd{
+    width: 50%;
+    margin: 20px 10px 20px 15px;
+}
+
+.content-divide{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.content-left{
+    line-height: 30px;
+    width: 30%;
+    margin: 5px 10px 5px 0px;
+}
+
+.content-right{
+    width: 70%;
+    margin: 5px 10px 5px 0px;
+    line-height: 30px;
+    height: 30px;
+}
+
+.content-right input{
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #cac6c6;
+    width: 245px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+#radio-phone-id{
+    width: auto;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+#email-phone-id{
+    width: auto;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+#receive-conf-id{
+    width: 100px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#radio-phone-pwd{
+    width: auto;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+#email-phone-pwd{
+    width: auto;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+#receive-conf-pwd{
+    width: 100px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#button-id-find{
+    text-align: center;
+    width: 100px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.content-divide-more-left{
+    width: 20%;
+}
+
+.content-divide-more-right{
+    width: 80%;
+}
+
+.content-agree-left{
+    width: 50%;
+}
+
+.content-agree-right{
+    width: 50%;
+}
+
+#content-submit{
+    text-align: center;
+}

@@ -1,0 +1,13 @@
+@import "reset.css";
+@import "styles.css";
+
+input {
+    border: none;
+}
+
+/* a태그 색상변경 안되도록
+a {
+  color: inherit;
+  text-decoration: none;
+}
+*/

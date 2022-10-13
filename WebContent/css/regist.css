@@ -1,0 +1,43 @@
+@import "reset.css";
+
+.container {
+    max-width:1024px; 
+    margin:30px auto;
+    text-align: center;
+
+    background-color: rgb(255, 255, 255);
+}
+
+div {
+    padding: 1px;
+    margin: 3px;
+}
+
+input{
+    width: 30%; padding: 10px 20px; margin: 5px 0; box-sizing: border-box;
+}
+
+textarea {
+    width: 40%; height: 90px; box-sizing: border-box; resize: both;
+}
+
+input[type="text"] { border: solid 2px #5c5b5b; -webkit-transition: 2s; transition: 2s; }
+input[type="text"]:focus { border: solid 2px #2f00ff; }
+
+input[type="submit"] { width: 10%; border: solid 2px #2600ff5b; -webkit-transition: 1s; transition: 0.1s; background-color: rgba(140, 179, 252, 0.521); }
+input[type="submit"]:focus { border: solid 2px #00d9ff; }
+
+input[type="reset"] { width: 10%; border: solid 2px #ff00005b; -webkit-transition: 1s; transition: 0.1s; background-color: rgba(0, 89, 255, 0.521); }
+input[type="reset"]:focus { border: solid 2px #00d9ff; }
+
+.input_1 {
+    border: none ; background: transparent;
+}
+
+.div1 {
+    max-width: 70% ; 
+    margin:20px auto;
+    text-align: center;
+
+    background-color: rgb(255, 255, 255);
+}

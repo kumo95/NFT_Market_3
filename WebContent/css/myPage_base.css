@@ -1,0 +1,121 @@
+@import "reset.css";
+@import "myPage_main.css";
+
+
+*{
+    box-sizing: border-box;
+}
+
+hr{
+    height: 1px;
+    background-color: black;
+    border: 0px;
+    margin: 0px;
+}
+
+#title-mypage{
+    margin: 0px 0px 0px 70px;
+    padding-top: 50px;
+}
+
+.div-icon-Content{
+    display: flex;
+}
+.icon-area{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    margin-left: 100px;
+}
+
+
+.div-userinfo{
+    background-color: #f0f0f0f0;
+    width: 1260px;
+}
+
+#userIcon{
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+}
+
+.description-area{
+    margin-left: 50px;
+    padding-top: 60px;
+    width: 400px;
+
+}
+
+.description-area :nth-child(1) strong{
+    font-size: 4em;
+}
+
+.artwortk-area{
+    padding-left: 20px;
+}
+
+.community-area{
+    display: flex;
+    padding: 120px 40px 40px 40px;
+    text-align: center;
+}
+
+.community-area > div{
+    margin-right: 20px;
+}
+
+.community-area div div{
+    margin-bottom: 5px;
+}
+
+.community-icons{
+    width: 50px;
+    height: 50px;
+}
+
+.div-nav-Content{
+    display: flex;
+    width: 1260px;
+}
+
+.navbar-area{
+    margin: 50px 30px 20px 70px;
+}
+
+#title-navbar{
+    margin: 0px 0px 10px 0px;
+    font-size: 24px;
+}
+
+.navbar-items{
+    margin-top: 2px;
+    font-size: 16px;
+    line-height: 40px;
+
+}
+
+a.navbar-items{
+    display: flex;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+a:link {
+    color : gray;
+  }
+  a:visited {
+    color : gray;
+  }
+  a:hover {
+    color : blue;
+    text-decoration: underline;
+  }
+  a:active {
+    color : green;
+  }
+
+.content-area{
+    margin: 40px 0px 20px 20px;
+}
