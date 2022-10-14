@@ -1,4 +1,4 @@
-<-- 회원 삭제 관리자페이지 -->
+<!-- 회원 삭제 관리자페이지 -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
