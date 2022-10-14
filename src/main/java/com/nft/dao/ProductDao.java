@@ -321,6 +321,62 @@ public class ProductDao {
 		}
 			return list;
 	}	
+		
+	
+		
+		// 내가(owner) 소유한 상품 조회
+		public List<ProductVo> selectOwnerProducts(String owner) {
+			String sql = "select * from nft_product where owner=?";
+			
+			List<ProductVo> list = new ArrayList<ProductVo>();		// List 컬렉션 객체 생성
+		
+			Connection conn = null;
+			PreparedStatement pstmt =null;		// 동적 쿼리
+			ResultSet rs = null;
+				
+			try {
+				conn = DBManager.getConnection();
+				
+				// (3단계) Statement 객체 생성
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, owner);
+				  
+				// (4단계) SQL문 실행 및 결과 처리
+				rs = pstmt.executeQuery();
+
+				// rs.next() : 다음 행(row)을 확인
+				// rs.getString("컬럼명")
+				
+				if (owner != null) {
+				
+					while (rs.next()){
+					
+					ProductVo pVo = new ProductVo();
+					// 디비로부터 상품 정보 획득
+					pVo.setCreator(rs.getString("creator"));
+					pVo.setOwner(rs.getString("owner"));
+					pVo.setUnique_no(rs.getString("unique_no"));			// 컬럼명 code인 정보를 가져옴
+					pVo.setP_name(rs.getString("p_name"));		// DB에서 가져온 정보를 pVo객체에 저장
+					pVo.setPrice(rs.getDouble("price"));
+					pVo.setNftUrl(rs.getString("nftUrl"));
+					pVo.setDescription(rs.getString("description"));
+					pVo.setEdition(rs.getInt("edition"));
+					pVo.setReg_date(rs.getDate("reg_date"));
+					
+					list.add(pVo);		// list 객체에 데이터 추가
+					
+					System.out.println();
+					}
+				} else {
+					System.out.println("로그인 하시오");
+				} 
+			}catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt ,rs);
+		}
+			return list;
+	}	
 			
 }
 	

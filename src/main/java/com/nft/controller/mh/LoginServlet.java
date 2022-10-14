@@ -1,4 +1,4 @@
-package com.nft.controller;
+package com.nft.controller.mh;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,6 +40,10 @@ public class LoginServlet extends HttpServlet {
 			url = "mainPage.jsp";
 		}
 
+		//상품리스트
+		ProductDao pDao = ProductDao.getInstance();
+		List<ProductVo> productList = pDao.selectAllProducts();
+		request.setAttribute("productList", productList);
 		
 		// 페이지 이동 forward 방식
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);

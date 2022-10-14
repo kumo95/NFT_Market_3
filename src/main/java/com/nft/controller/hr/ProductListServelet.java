@@ -1,4 +1,4 @@
-package com.nft.controller;
+package com.nft.controller.hr;
 
 import java.io.IOException;
 import java.util.List;

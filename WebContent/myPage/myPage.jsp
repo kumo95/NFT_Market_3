@@ -7,10 +7,8 @@
 <link rel="stylesheet" href="css/myPage_main.css">
 <title>마이페이지</title>
 </head>
+<%@ include file="../header.jsp" %>
 <body>
-    <div>
-        <h1 style="text-align: center;">헤더</h1>
-    </div>
     <div class="div-userinfo">
         <div>
             <h2 id="title-mypage">MyPage</h2>
@@ -22,7 +20,7 @@
             <div class="description-area">
                 <div>
                     <strong>userName</strong>
-                    <a href="updateMember.do">회원정보변경</a>
+                    <a href="updateMember.do">정보변경</a>
                 </div>
                 <br>
                 <br>
@@ -63,7 +61,7 @@
             <!-- 모든 myPage의 목록은 동일해야합니다. -->
             <h2 class="navbar-items" id="title-navbar">나의 NFT 컬렉션</h2>
             <a class="navbar-items" href="">개인정보</a>
-            <a class="navbar-items" href="">나의NFT</a>
+            <a class="navbar-items" href="ownerProduct.do?creator=${loginUser.userid}">나의NFT</a>
             <a class="navbar-items" href="creatorProduct.do?creator=${loginUser.userid}">판매NFT</a>
             <a class="navbar-items" href="cartList.do?userid=${loginUser.userid}">장바구니</a>
             <a class="navbar-items" href="">즐겨찾기</a>

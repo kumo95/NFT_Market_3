@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="css/myPage_base.css">
     <title>마이페이지 장바구니</title>
 </head>
+<%@ include file="../header.jsp" %>
 <body>
-    <div>
-        <h1 style="text-align: center;">헤더</h1>
-    </div>
     <div class="div-userinfo">
         <div>
             <h2 id="title-mypage">MyPage</h2>
@@ -26,7 +24,7 @@
             <div class="description-area">
                 <div>
                     <strong>userName</strong>
-                    <a href="">회원정보변경</a>
+                    <a href="updateMember.do">정보변경</a>
                 </div>
                 <br>
                 <br>
@@ -67,7 +65,7 @@
             <!-- 모든 myPage의 목록은 동일해야합니다. -->
             <h2 class="navbar-items" id="title-navbar">나의 NFT 컬렉션</h2>
             <a class="navbar-items" href="">개인정보</a>
-            <a class="navbar-items" href="">나의NFT</a>
+            <a class="navbar-items" href="ownerProduct.do?creator=${loginUser.userid}">나의NFT</a>
             <a class="navbar-items" href="creatorProduct.do?creator=${loginUser.userid}">판매NFT</a>
             <a class="navbar-items" href="cartList.do?userid=${loginUser.userid}">장바구니</a>
             <a class="navbar-items" href="">즐겨찾기</a>
@@ -77,10 +75,9 @@
             <a class="navbar-items" href="">댓글</a>
         </div>
         <div class="content-area">
-            <h2>본문</h2>
             
             <div class="content-title-list">
-                    <h2>장바구니</h2>
+                    <h2>나의NFT</h2>
                     <a href="">상세페이지</a>
                 </div>
                 <form>
@@ -92,16 +89,17 @@
                             <th>금액</th>
                             <th>고유번호</th>
                             <th>창조자</th>
+                            <th>등록날짜</th>
                         </tr>
 
-                 <c:forEach var="cartList" items="${cartList}">  
+                 <c:forEach var="List" items="${List}">  
                         <tr>
-                            <td><img src="upload/${cartList.nftUrl}" width="60"></td>
-                            <td>${cartList.p_name}</td>
-                            <td>${cartList.price}</td>
-                            <td>${cartList.unique_no}</td>
-                            <td>${cartList.creator}</td>
-                            <td><a href="removeCart.do?unique_no=${cartList.unique_no}&userid=${cartList.userid}">삭제</a></td>
+                            <td><img src="upload/${List.nftUrl}" width="60"></td>
+                            <td>${List.p_name}</td>
+                            <td>${List.price}</td>
+                            <td>${List.unique_no}</td>
+                            <td>${List.creator}</td>
+                            <td>${List.reg_date}</td>
                         </tr>
                  </c:forEach>
                         
@@ -111,7 +109,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><input type="button" value="삭제"></td>
+                            <td></td>
                         </tr>
 
                     </table>
