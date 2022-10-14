@@ -1,4 +1,4 @@
-<-- 상품 삭제 관리자페이지 -->
+<!-- 상품 삭제 관리자페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
