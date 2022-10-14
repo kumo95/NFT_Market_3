@@ -6,12 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>헤더</title>
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<!-- Bootstrap icons-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+	rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
 <link rel="stylesheet" type="text/css" href="index/css/header.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body>
 <!-- Header-->
 		<!-- Navigation-->
-	<header class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
 			<a class="navbar-brand" href="mainPage.jsp">NFTique</a>
 			<button class="navbar-toggler" type="button"
@@ -53,6 +61,6 @@
 				</form>
 			</div>
 		</div>
-	</header>
+	</nav>
 </body>
 </html>

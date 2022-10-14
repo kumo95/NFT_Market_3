@@ -44,9 +44,15 @@
                 </tr>
             </thead>
             <tbody>
-    
+                <!-- <tr th:if="${#lists.size(list)} > 0" th:each="list : ${list}">
+                    <td th:text="${list.boardIdx}"></td>
+                    <td class="title" th:text="${list.title}"></td>
+                    <td th:text="${#temporals.format(list.createdDatetime, 
+                        'yyyy-MM-dd HH:mm::ss')}"></td>
+                </tr> 
+                <tr th:unless="${#lists.size(list)} > 0">
                     <td colspan="5">조회된 결과가 없습니다.</td>
-
+                </tr>  -->
             </tbody>
         </table>
         <a href="/board/openBoardWrite.do" class="btn">글 쓰기</a>
