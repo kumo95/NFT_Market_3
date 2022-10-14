@@ -46,8 +46,6 @@
             </div>
         </div>
     </section>
-
-
     <!-- 상품 설명 2칸-->
     <section class="py-5" id="features">
         <div class="container px-5 my-5">
@@ -97,7 +95,6 @@
                                 </button>
 								</div>
                             </div>
-
                         </div>
                         <div class="col mb-5 mb-md-0 h-100">
                             <h2 class="h5 mb-2">NFT 정보</h2>
@@ -144,10 +141,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-
     <!-- 거래 체결/제시 2칸-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
@@ -214,9 +209,7 @@
 
         </div>
     </section>
-
-
-    <!--유의사항-->
+  <!--유의사항-->
     <div class="row gx-5 justify-content-center">
         <div class="col-lg-10">
             <div class="mb-5">
@@ -235,9 +228,6 @@
             </div>
         </div>
     </div>
-
-
-
 
 
 <!--  연관된 다른 아이템들 누를수 있도록 4개 상품 -->
