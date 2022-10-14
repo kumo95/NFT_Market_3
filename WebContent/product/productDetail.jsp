@@ -21,8 +21,6 @@
     <link href="css/productDetail.css" type="text/css" rel="stylesheet" />
 </head>
 
-<!--상품 사진-->
-
 <body>
     <section class="">
         <div class="container px-5 my-5 ">

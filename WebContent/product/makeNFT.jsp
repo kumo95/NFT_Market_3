@@ -20,7 +20,8 @@
 
 <body>
 
-    <div class="py-5">
+<div class="">
+	<div class="py-5">
         <div class="container px-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xxl-6">
@@ -32,9 +33,8 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <section class="">
+	</div>
+	<div class="">
         <div class="container px-5">
             <div class="row gx-5">
                 <div class="col-lg-6">
@@ -49,10 +49,9 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
     <!-- Pricing section-->
-    <section class="bg-light">
+    <div class="bg-light">
         <div class="container px-5">
             <div class="text-center mb-5">
                 <h4 class="fw-bolder">배경 선택</h4>
@@ -114,7 +113,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="">
                 <div class="container px-5">
                     <div class="row justify-content-center">
@@ -128,7 +126,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</div>
 </body>
+
 </html>

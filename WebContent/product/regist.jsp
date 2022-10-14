@@ -10,7 +10,7 @@
     <title>상품등록</title>
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
-
+<%@ include file="../header.jsp" %>
 <body>
 <a href="makeNFT.do">makeNFT.do</a>
 
@@ -59,4 +59,5 @@
         </div>
     </form>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>
