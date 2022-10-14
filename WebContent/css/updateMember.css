@@ -13,11 +13,12 @@ hr{
     height: 3px;
     background-color: #cac6c6;
     border: 0px;
-    width:1216px;
+    width:1180px;
 }
 
 .main-content{
     width: 1280px;
+    padding-left: 50px;
 }
 
 #content-title{
@@ -43,12 +44,17 @@ div.content-password td{
     height: 23px;
 }
 
+div.content-password td:nth-child(2){
+    width: 250px;
+    height: 23px;
+}
+
 .content-agree-left{
     width: 50%;
 }
 
 .content-agree-right{
-    width: 50%;
+    width: 40%;
 }
 
 #content-submit{

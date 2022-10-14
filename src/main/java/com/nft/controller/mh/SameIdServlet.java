@@ -18,19 +18,32 @@ public class SameIdServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// js에서 보낸 userid 받아서 변수에 할당
 		String userid = request.getParameter("userid");		
-		
+		String name = request.getParameter("name");
+		String birth = request.getParameter("birth");
+		String e_wallet = request.getParameter("e_wallet");
+		String phone = request.getParameter("phone");
+		if(request.getParameter("emailColorControll") != "") {
+			int emailColorControll = Integer.parseInt(request.getParameter("emailColorControll"));
+			if(emailColorControll==1) {
+				request.setAttribute("emailColor", emailColorControll);
+			}else if(emailColorControll==-1) {
+				request.setAttribute("emailColor", emailColorControll);
+			}
+		}
 		// 입력한 아이디를 DB에서 조회하여 동일한 아이디가 없는지 확인
 		MemberDao mDao = MemberDao.getInstance();
 		int result = mDao.confirmID(userid);
 		if(result==1) {
-			request.setAttribute("message", "이 아이디는 사용 불가능 합니다.");
-			request.setAttribute("color", -1);
+			request.setAttribute("idColor", -1);
 		}else if(result==-1) {
-			request.setAttribute("message", "이 아이디는 사용 가능 합니다.");
-			request.setAttribute("color", 1);
+			request.setAttribute("idColor", 1);
 		}
 		
 		request.setAttribute("userid", userid);
+		request.setAttribute("name", name);
+		request.setAttribute("birth", birth);
+		request.setAttribute("e_wallet", e_wallet);
+		request.setAttribute("phone", phone);
 		request.setAttribute("result", result);
 		
 		

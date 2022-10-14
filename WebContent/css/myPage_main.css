@@ -1,5 +1,4 @@
 @import "reset.css";
-@import "myPage_base.css";
 
 @media ( min-width: 1400px ) {
     body { color: red; }

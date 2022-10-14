@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.nft.dao.MemberDao;
 import com.nft.dto.MemberVo;
@@ -23,8 +24,6 @@ public class SignUpServlet extends HttpServlet {
 //		String warning_text = "중복 체크해주세요.";
 //		request.setAttribute("warning_text", warning_text);
 		
-		request.setAttribute("message", "중복 체크를 해주세요.");
-		request.setAttribute("color", 0);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("member/signUp.jsp");
 		dispatcher.forward(request,response);
 
@@ -76,6 +75,9 @@ public class SignUpServlet extends HttpServlet {
 		mVo.setPhone(phone);
 		mVo.setPhone_agree(phone_agree);
 		
+		// 세선설정
+		HttpSession saveKey = request.getSession();
+		saveKey.invalidate();
 		
 		int result = mDao.insertMember(mVo);
 		if (result == 1) {
@@ -87,7 +89,8 @@ public class SignUpServlet extends HttpServlet {
 		}else {
 //			System.out.println("회원가입 실패");
 			out.println("<script>");
-			out.println("alert('회원가입 실패'); location.href = 'login.do';");		// 다시 회원가입창으로 가는방법 생각해보기
+			out.println("alert('회원가입 실패');");		// 다시 회원가입창으로 가는방법 생각해보기 location.href = 'login.do';
+			out.println("history.go(-1);");
 			out.println("</script>");
 			out.close();
 		}

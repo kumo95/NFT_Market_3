@@ -161,7 +161,7 @@ public class MemberVo {
 	@Override
 	public String toString() {
 		return "MemberVo [name=" + name + ", userid=" + userid + ", idPwd=" + idPwd + ", birth=" + birth + ", gender=" + gender + ","
-				+ " email=" + e_wallet + ", emailPwd=" + e_walletPwd + ", nationPhone=" + nationPhone + ", phone=" + phone + ","
+				+ " e_wallet=" + e_wallet + ", e_walletPwd=" + e_walletPwd + ", nationPhone=" + nationPhone + ", phone=" + phone + ","
 				+ " email_agree=" + email_agree + ", phone_agree=" + phone_agree + "]";
 	}
 

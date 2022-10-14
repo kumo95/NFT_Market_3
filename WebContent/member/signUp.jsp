@@ -6,12 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <link href="css/sighUp.css" rel="stylesheet">
-<title>회원가입 페이지</title>
 <script type="text/javascript" src="script/member.js"></script>
+<script type="text/javascript" src="script/mail.js"></script>
+<title>회원가입 페이지</title>
 </head>
 <body>
 	<div class="login-title">
-		<h1 id="title-size">NFT Market</h1>
+		<a href="mainPage.jsp"><h1 id="title-size">NFT Market</h1></a>
 	</div>
 	<form class="text-form" action="signUp.do" method="post" name="frm">
 		<div class="signUp-form">
@@ -19,30 +20,31 @@
 			<div class="email-area">
 				<input type="text" name="userid" class="text-area" value="${userid}"><br>
 				<!-- 중복체크 수행여부 저장 변수  -->
-				<input type="hidden" name="checkid" value="${userid}">
-				<input type="button" value="중복 체크" onclick="checkId()"
-					class="request-certification">			
-				<br>
+				<input type="hidden" name="checkid" value="${userid}"> <input
+					type="button" value="중복 체크" onclick="checkId()"
+					class="request-certification"> <br>
 			</div>
-			<c:if test="${color==0}">
-				<p id="sameId" style="text-align:right;">${message}</p>
+			<input type="hidden" name="idColorControll" value="${idColor}">
+			<c:if test="${idColor==null}">
+				<p id="sameId" style="text-align: right;">중복 체크를 해주세요.</p>
 			</c:if>
-			<c:if test="${color==-1}">
-				<p id="sameId" style="text-align:right; color:red">${message}</p>
+			<c:if test="${idColor==-1}">
+				<p id="sameId" style="text-align: right; color: red">이 아이디는 사용 불가능 합니다.</p>
 			</c:if>
-			<c:if test="${color==1}">
-				<p id="sameId" style="text-align:right; color:blue">${message}</p>
+			<c:if test="${idColor==1}">
+				<p id="sameId" style="text-align: right; color: blue">이 아이디는 사용 가능 합니다.</p>
 			</c:if>
-			<br>
-			비밀번호 <input type="password" name="idPwd" onchange="checkIdPwd()" class="text-area"><br>
-			비밀번호 확인 <input type="password" name="idPwdCheck" onchange="checkIdPwd()" class="text-area"><br>
+			<br> 비밀번호(아이디) <input type="password" name="idPwd"
+				onchange="checkIdPwd()" class="text-area"><br>
+			비밀번호(아이디) 확인 <input type="password" name="idPwdCheck"
+				onchange="checkIdPwd()" class="text-area"><br>
 			<p id="checkIdPwd"></p>
 		</div>
 		<div class="signUp-form">
-			이름 <input type="text" name="name" class="text-area"><br>
-			생년월일 <input type="text" name="birth" class="text-area"
-				placeholder="ex) 19990101"><br>
-			성별 <br> <select name="gender">
+			이름 <input type="text" name="name" class="text-area" value="${name}"><br>
+			생년월일 <input type="text" name="birth" class="text-area" value="${birth}"
+				placeholder="ex) 19990101"><br> 성별 <br> <select
+				name="gender">
 				<option value="">선택</option>
 				<option value="male">남성</option>
 				<option value="female">여성</option>
@@ -51,23 +53,36 @@
 		<div class="signUp-form">
 			이메일 (전자지갑 아이디)
 			<div class="email-area">
-				<input type="text" name="e_wallet" class="input-contact"> <input
-					type="button" name="sendEmail" value="인증번호 받기"
+					<!-- <a href="sendEmail.do">이메일전송</a> -->
+				<input type="text" name="e_wallet" class="input-contact" value="${e_wallet}"> 
+				<input
+					type="button" value="인증번호 받기" onclick="sendEmail()"
 					class="request-certification"><br>
 			</div>
+			<input type="hidden" name="emailColorControll" value="${emailColor}">
+			<c:if test="${emailColor==-1}">
+				<p id="sameId" style="text-align: right; color: red">이메일 중복으로 사용 불가능 합니다.</p>
+			</c:if>
+			<c:if test="${emailColor==1}">
+				<p id="sameId" style="text-align: right; color: blue">이메일에 인증번호를 전송했습니다.</p>
+			</c:if>
+			<br>
 			<div class="email-area">
-				<input type="text" name="emailCertification" class="input-contact"
-					placeholder="인증번호를 입력하세요."> <input type="button"
-					name="checkEmail" value="인증번호 확인" class="response-certification"><br>
+				<input type="hidden" name="key" value="${AuthenticationKey}">
+				<input type="text" name="emailCertification" class="text-area" onchange="checkCertification()" 
+					placeholder="인증번호를 입력하세요.">
 			</div>
+			<p id="checkCertification"></p>
+			<br>
 			서비스 및 이벤트에 대한 메일을 수신하겠습니까? <br>
 			<div class="input-agree">
 				<input type="radio" name="email_agree" value="1"> 동의 <input
 					type="radio" name="email_agree" value="0"> 비동의
 			</div>
-			<br> 비밀번호 <input type="password" name="e_walletPwd" onchange="checkE_walletPwd()"
-				class="text-area"><br> 비밀번호 확인 <input type="password"
-				name="e_walletPwdCheck" onchange="checkE_walletPwd()" class="text-area"><br>
+			<br> 비밀번호(이메일) <input type="password" name="e_walletPwd"
+				onchange="checkE_walletPwd()" class="text-area"><br>
+			비밀번호 확인(이메일) <input type="password" name="e_walletPwdCheck"
+				onchange="checkE_walletPwd()" class="text-area"><br>
 			<p id="checkE_walletPwd"></p>
 		</div>
 		<div class="signUp-form">
@@ -81,7 +96,7 @@
 				<option value="chi">중국 +86</option>
 			</select> <br>
 			<div class="phone-area">
-				<input type="text" name="phone" class="input-contact"
+				<input type="text" name="phone" class="input-contact" value="${phone}"
 					placeholder="ex) 010-1234-5678"> <input type="button"
 					name="sendPhone" value="인증번호 받기" class="request-certification"><br>
 			</div>

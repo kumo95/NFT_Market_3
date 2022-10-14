@@ -2,7 +2,6 @@ package com.nft.controller.mh;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,37 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.nft.dao.MemberDao;
-import com.nft.dao.ProductDao;
 import com.nft.dto.MemberVo;
-import com.nft.dto.ProductVo;
 
 @WebServlet("/login.do")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String url = "member/login.jsp";			// 현재 URL 페이지
 		request.setAttribute("control", 1);
 		
 		// 세선설정
 		HttpSession session = request.getSession();
-		
-		
 		// 만약, 세션 속성이 유지되고 있는 동안(즉, 로그인이 되어있는 상태)에 main.jsp 페이지로 이동
 		// session의 loginUser가 null이 아니면 이미 로그인이 되어있는 상태
-		if(session.getAttribute("loginUser") != null) {	
-			//상품리스트
-			ProductDao pDao = ProductDao.getInstance();
-			List<ProductVo> productList = pDao.selectAllProducts();
-			request.setAttribute("productList", productList);
+		if(session.getAttribute("loginUser") != null) {
 			url = "mainPage.jsp";
 		}
-
-		//상품리스트
-		ProductDao pDao = ProductDao.getInstance();
-		List<ProductVo> productList = pDao.selectAllProducts();
-		request.setAttribute("productList", productList);
 		
 		// 페이지 이동 forward 방식
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
@@ -92,14 +77,6 @@ public class LoginServlet extends HttpServlet {
 //			out.close();
 			//			url = "member/login.jsp";
 		}		
-		
-		
-		
-		//상품리스트
-		ProductDao pDao = ProductDao.getInstance();
-		List<ProductVo> productList = pDao.selectAllProducts();
-		request.setAttribute("productList", productList);
-		
 		
 		RequestDispatcher dispatcher;
 		dispatcher = request.getRequestDispatcher(url);

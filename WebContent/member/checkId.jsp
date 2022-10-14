@@ -23,7 +23,6 @@
 			</script>
 		</c:if>
 
-
 		<!-- 사용 가능한 아이디인 경우 -> 사용 버튼을 생성 -->
 		<c:if test="${result==-1}">
 			<input type="button" value="사용" onclick="idOk()">

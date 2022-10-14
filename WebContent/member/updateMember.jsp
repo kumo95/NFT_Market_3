@@ -8,6 +8,7 @@
 <script type="text/javascript" src="script/member.js"></script>
 <title>개인정보 수정페이지</title>
 </head>
+<%@ include file="../header.jsp" %>
 <body>
 	<form action="updateMember.do" method="post" name="frm">
 		<div class="main-content">
@@ -27,17 +28,25 @@
 						<table>
 							<tr>
 								<td>현재 비밀번호</td>
-								<td><input type="password" name="idPwd"></td>
+								<td>
+								<input type="hidden" name="idPwdSess" value="${loginUser.idPwd}">
+								<input type="password" name="idPwd"></td>
+
 							</tr>
 							<tr>
 								<td>새 비밀번호</td>
-								<td><input type="password" name="newIdPwd"></td>
+								<td><input type="password" name="newIdPwd" onchange="updateIdPwd()"></td>
 							</tr>
 							<tr>
 								<td>비밀번호 확인</td>
-								<td><input type="password" name="newIdPwdCheck"></td>
+								<td><input type="password" name="newIdPwdCheck" onchange="updateIdPwd()"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td id="checkIdPwd"></td>
 							</tr>
 						</table>
+						
 					</div>
 				</div>
 			</div>
@@ -63,15 +72,21 @@
 						<table>
 							<tr>
 								<td>현재 비밀번호</td>
-								<td><input type="password" name="e_walletPwd"></td>
+								<td>
+								<input type="hidden" name="e_walletPwdSess" value="${loginUser.e_walletPwd}">
+								<input type="password" name="e_walletPwd"></td>
 							</tr>
 							<tr>
 								<td>새 비밀번호</td>
-								<td><input type="password" name="newE_walletPwd"></td>
+								<td><input type="password" name="newE_walletPwd" onchange="updateE_walletPwd()"></td>
 							</tr>
 							<tr>
 								<td>비밀번호 확인</td>
-								<td><input type="password" name="newE_walletPwdCheck"></td>
+								<td><input type="password" name="newE_walletPwdCheck" onchange="updateE_walletPwd()"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td id="checkE_walletPwd"></td>
 							</tr>
 						</table>
 					</div>
@@ -120,4 +135,5 @@
 		</div>
 	</form>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>

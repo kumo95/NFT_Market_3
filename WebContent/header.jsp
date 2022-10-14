@@ -30,7 +30,7 @@
 					<li class="nav-item"><a class="nav-link" href="regist.do">창조</a></li>
 				</c:if>
 					
-					<li class="nav-item"><a class="nav-link" href="#!">커뮤니티</a></li>
+					<li class="nav-item"><a class="nav-link" href="community.do">커뮤니티</a></li>
 					<li class="nav-item"><a class="nav-link" href="#!">고객센터</a></li>
 					
 				<c:if test="${control==null}">

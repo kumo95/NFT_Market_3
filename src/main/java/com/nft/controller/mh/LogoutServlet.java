@@ -1,7 +1,6 @@
 package com.nft.controller.mh;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,20 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nft.dao.ProductDao;
-import com.nft.dto.ProductVo;
-
 @WebServlet("/logout.do")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//상품리스트
-		ProductDao pDao = ProductDao.getInstance();
-		List<ProductVo> productList = pDao.selectAllProducts();
-		request.setAttribute("productList", productList);
-		
-		
+
 		// 세션을 사용하는 경우
 		HttpSession session = request.getSession();
 		session.invalidate(); // 세션 종료
