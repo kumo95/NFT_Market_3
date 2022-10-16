@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품등록</title>
     <link rel="stylesheet" type="text/css" href="css/regist.css">
+<script type="text/javascript" src="js/product.js"></script>
 </head>
 <%@ include file="../header.jsp" %>
 <body>
@@ -21,10 +22,10 @@
             </div>
             <div>
                 <div>
-                    <div>창조자 : <input type="text" name="creator"></div>
+                    <div>창조자 : <input type="text" name="creator" value="${loginUser.userid}"></div>
                 </div>
                 <div>
-                    <div>소유자 : <input type="text" name="owner"></div>
+                    <div>소유자 : <input type="text" name="owner" value="${loginUser.userid}"></div>
                 </div>
                 <div>
                     <div>유니크번호 : <input type="text" name="unique_no"></div>
@@ -53,7 +54,7 @@
             </div>
             <div>
                 상품을 등록하시겠습니까?
-                <input type="submit" value="등록">
+                <input type="submit" value="등록" onclick= "return checkProduct()">
                 <input type="reset" value="취소">
             </div>
         </div>

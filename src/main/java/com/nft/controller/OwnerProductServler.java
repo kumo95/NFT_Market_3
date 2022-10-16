@@ -28,7 +28,7 @@ public class OwnerProductServler extends HttpServlet {
 		ProductDao pDao = ProductDao.getInstance();
 		
 		// 내상품 리스트를 디비로부터 조회하여 저장		
-		List<ProductVo> MyproductList = pDao.selectCreatorProducts(owner);
+		List<ProductVo> MyproductList = pDao.selectOwnerProducts(owner);
 		request.setAttribute("List", MyproductList);
 
 		

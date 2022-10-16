@@ -18,7 +18,7 @@ public class DeleteProductServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 쿼리스트링으로 전달 받은 code를 획득
-		String unique_no = request.getParameter("code");
+		String unique_no = request.getParameter("unique_no");
 		
 		// 상품 삭제 링크 클릭시 이동하여 삭제할 상품 정보를 표시
 		ProductDao pDao = ProductDao.getInstance();

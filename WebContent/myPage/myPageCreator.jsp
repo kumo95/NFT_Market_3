@@ -23,7 +23,7 @@
             </div>
             <div class="description-area">
                 <div>
-                    <strong>userName</strong>
+                    <strong>${loginUser.name}</strong>
                     <a href="updateMember.do">정보변경</a>
                 </div>
                 <br>
@@ -65,7 +65,7 @@
             <!-- 모든 myPage의 목록은 동일해야합니다. -->
             <h2 class="navbar-items" id="title-navbar">나의 NFT 컬렉션</h2>
             <a class="navbar-items" href="">개인정보</a>
-            <a class="navbar-items" href="ownerProduct.do?creator=${loginUser.userid}">나의NFT</a>
+            <a class="navbar-items" href="ownerProduct.do?owner=${loginUser.userid}">나의NFT</a>
             <a class="navbar-items" href="creatorProduct.do?creator=${loginUser.userid}">판매NFT</a>
             <a class="navbar-items" href="cartList.do?userid=${loginUser.userid}">장바구니</a>
             <a class="navbar-items" href="">즐겨찾기</a>
@@ -95,13 +95,13 @@
 
                  <c:forEach var="MyproductList" items="${MyproductList}">  
                         <tr>
-                            <td><img src="upload/${MyproductList.nftUrl}" width="60"></td>
+                            <td><img src="upload/${MyproductList.nftUrl}" width="60px"></td>
                             <td>${MyproductList.p_name}</td>
                             <td>${MyproductList.price}</td>
                             <td>${MyproductList.unique_no}</td>
                             <td>${MyproductList.reg_date}</td>
-                            <td><a href="updateProduct.do?unique_no=${product.unique_no}">수정</a></td>
-                            <td><a href="deleteProduct.do?unique_no=${product.unique_no}">삭제</a></td>
+                            <td><a href="updateProduct.do?unique_no=${MyproductList.unique_no}">수정</a></td>
+                            <td><a href="deleteProduct.do?unique_no=${MyproductList.unique_no}">삭제</a></td>
                         </tr>
                  </c:forEach>
                         
@@ -122,4 +122,6 @@
             
     </div>    
 </body>
+
+<%@ include file="../footer.jsp" %>
 </html>

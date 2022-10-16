@@ -35,7 +35,7 @@ public class UpdateProductServlet extends HttpServlet {
 		request.setAttribute("product", pVo);
 		
 		// 페이지 이동 : 수정 페이지
-		RequestDispatcher dispatcher = request.getRequestDispatcher("product/regist.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("product/updateProduct.jsp");
 		dispatcher.forward(request, response);
 		
 	
