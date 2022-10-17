@@ -90,7 +90,8 @@
         transform: scale(1.0);
     }
     .basketdiv .img{
-        width: 30%;
+        width: 50%;
+        
     }
     .basketdiv .pname{
         width: 40%;

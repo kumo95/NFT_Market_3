@@ -21,12 +21,12 @@
     <form name="orderform" id="orderform" method="post" class="orderform"  onsubmit="return false;">
         <div class="right-align basketrowcmd">
             <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delCheckedItem();">선택상품삭제</a>
-            <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delAllItem();">장바구니비우기</a>
+            <a href="removeAllCart.do?userid=${loginUser.userid}" class="abutton" onclick="javascript:basket.delAllItem();">장바구니비우기</a>
         </div>
 		
 		<div class="bigtext left-align sumcount buttongroup">${loginUser.userid} 장바구니</div>
-        <div class="bigtext left-align sumcount" id="sum_p_num">상품갯수: 0개</div>
-        <div class="bigtext left-align box blue summoney" id="sum_p_price">합계금액: </div>
+        <div class="bigtext left-align sumcount" id="sum_p_num">상품갯수: ${size}개</div>
+        <!-- <div class="bigtext left-align box blue summoney" id="sum_p_price">합계금액: </div> -->
     
             <input type="hidden" name="cmd" value="order">
             <div class="basketdiv" id="basket">
@@ -51,7 +51,7 @@
                 <div class="row data">
                     <div class="subdiv">
                         <div class="check"><input type="checkbox" name="buy" value="260" checked onclick="javascript:basket.checkItem();">&nbsp;</div>
-                        <div class="img" ><img src="upload/${cartList.nftUrl}"></div>
+                        <div class="img" ><img src="upload/${cartList.nftUrl}" width="130"></div>
                         <div class="pname">
                         	<a style="color: inherit; text-decoration: none;" href="productDetail.do?unique_no=${cartList.unique_no}">
                             ${cartList.p_name}

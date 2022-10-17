@@ -1,8 +1,5 @@
 @import "reset.css";
 
-@media ( min-width: 1280px ) {
-    body { color: red; }
-  }
 
 *{
     box-sizing: border-box;
@@ -124,5 +121,20 @@ a:link {
 }
 
 img {
-	width:60%;
+	width:200px;
+}
+
+.mypage-table th{
+    width: 120px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.mypage-table td{
+    width: 120px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
 }

@@ -27,8 +27,8 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-6">
                     <div class="text-center mb-5">
-                        <h1 class="fw-bolder">NFT</h1>
-                        <p class="lead fw-normal text-muted mb-0">상품 상세 정보</p>
+                        <h1 class="fw-bolder"><a href="mainPage.jsp">NFTique</a></h1>
+                        <p class="lead fw-normal text-muted mb-0"><a href="productList.do">상품리스트</a></p>
                     </div>
                 </div>
             </div>
@@ -349,4 +349,5 @@
     </div> --%>
 
 </body>
+
 </html>

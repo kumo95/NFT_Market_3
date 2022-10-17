@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/myPage_main.css">
 <title>마이페이지</title>
 </head>
-<%@ include file="../header.jsp" %>
+<jsp:include page="../header.jsp"/>
 <body>
     <div class="div-userinfo">
         <div>
@@ -462,5 +462,5 @@
     </div>
 
 </body>
-<%@ include file="../footer.jsp" %>
+<jsp:include page="../footer.jsp"/>
 </html>

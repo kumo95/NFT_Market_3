@@ -34,9 +34,11 @@ public class CartListServlet extends HttpServlet {
 //		ProductVo[] productList = pDao.selectAllProducts();
 		List<CartProductVo> cartList = cpDao.selectAllCartProducts(userid);
 		request.setAttribute("cartList", cartList);
+//		System.out.println(cartList.size());
+		request.setAttribute("size", cartList.size());						
+//		System.out.println("userid  "+userid);
+//		System.out.println(cartList);
 		
-		System.out.println("userid  "+userid);
-		System.out.println(cartList);
 		
 		// 리스트 페이지로 이동
 		// 리다이렉트 방식 페이지 이동

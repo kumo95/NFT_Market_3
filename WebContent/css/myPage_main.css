@@ -1,9 +1,5 @@
 @import "reset.css";
 
-@media ( min-width: 1400px ) {
-    body { color: red; }
-  }
-
 *{
     box-sizing: border-box;
 }
@@ -185,8 +181,5 @@ a:link {
     vertical-align: middle;
 }
 
-img {
-	width:60%;
-}
 
 

@@ -169,6 +169,33 @@ public class CartProductDao {
 			}
 
 		}
+		
+		
+	// 장바구니 상품 전체 삭제
+	// 상품 삭제
+	public void deleteCartAllProducts(String userid) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;		// 동적 쿼리
+			String sql_insert = "delete from NFT_CART where userid=?";			
+			
+			try {
+				conn = DBManager.getConnection();
+		
+				// (3단계)객체 생성
+				pstmt = conn.prepareStatement(sql_insert);
+				pstmt.setString(1, userid);
+				
+				// (4단계)SQL문 실행 및 결과 처리
+				pstmt.executeUpdate();		// 쿼리 수행
+			
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt);
+
+			}
+
+		}
 	
 	
 	

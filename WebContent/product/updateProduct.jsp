@@ -16,10 +16,10 @@
 			<td>
 				<c:choose>
 					<c:when test="${empty product.nftUrl}}">
-						<img src="image/noimage.jpg" width="200px" height="200px">
+						<img src="image/noimage.jpg">
 					</c:when>
 					<c:otherwise>
-						<img src="upload/${product.nftUrl}" width="200px" height="200px">
+						<img src="upload/${product.nftUrl}">
 					</c:otherwise>
 				</c:choose>
 			</td>
@@ -32,10 +32,6 @@
 					<tr>
 						<th>가격</th>
 						<td><input type="text" name="price" value="${product.price}"></td>
-					</tr>
-					<tr>
-						<th>사진</th>
-						<td><input type="text" name="nftUrl"><br></td>
 					</tr>
 					<tr>
 						<th>설명</th>
