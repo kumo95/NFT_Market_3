@@ -322,7 +322,6 @@ public class ProductDao {
 			return list;
 	}	
 		
-	
 		
 		// 내가(owner) 소유한 상품 조회
 		public List<ProductVo> selectOwnerProducts(String owner) {
@@ -377,6 +376,114 @@ public class ProductDao {
 		}
 			return list;
 	}	
+		
+		
+		
+	
+		// 게시물 검색
+		public List<ProductVo> getProductList() {
+			return getProductList("p_name", "", 1);
+		}
+		public List<ProductVo> getProductList(int page) {
+			return getProductList("p_name", "", page);
+		}
+		public List<ProductVo> getProductList(String column, String keyword, int page) {
+			String sql = "SELECT * FROM ("
+					+ "SELECT ROWNUM N, b.* "
+					+ "FROM (SELECT * FROM nft_product where "+column+" like ? order by reg_date desc) b"
+					+ ") "
+					+ "WHERE N BETWEEN ? AND ?";
+			
+//			첫번째 ? => 1, 11, 21, 31, 41, => an = 1+(page-1)*10
+//			등차수열의 n에 대한 식은 첫째항 A 공차가 B인 경우 => A+B(n-1)
+//			두번째 ? => 10, 20, 30, 40 => page*10
+			
+			ProductVo pVo =null;
+			List<ProductVo> list = new ArrayList<ProductVo>();		// List 컬렉션 객체 생성
+			
+			Connection conn = null;
+			PreparedStatement pstmt =null;		// 동적 쿼리
+			ResultSet rs = null;
+			
+			try {
+				conn = DBManager.getConnection();
+				
+				// (3단계) Statement 객체 생성
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, "%"+keyword+"%");
+				
+				pstmt.setInt(2, 1+(page-1)*8);
+				pstmt.setInt(3, page*8);
+				  
+				// (4단계) SQL문 실행 및 결과 처리
+				rs = pstmt.executeQuery();
+
+				// rs.next() : 다음 행(row)을 확인
+				// rs.getString("컬럼명")
+				while (rs.next()){
+					
+					pVo = new ProductVo();
+					// 디비로부터 정보 획득
+					pVo.setCreator(rs.getString("creator"));
+					pVo.setOwner(rs.getString("owner"));
+					pVo.setUnique_no(rs.getString("unique_no"));			// 컬럼명 code인 정보를 가져옴
+					pVo.setP_name(rs.getString("p_name"));		// DB에서 가져온 정보를 pVo객체에 저장
+					pVo.setPrice(rs.getDouble("price"));
+					pVo.setNftUrl(rs.getString("nftUrl"));
+					pVo.setDescription(rs.getString("description"));
+					pVo.setEdition(rs.getInt("edition"));
+					pVo.setReg_date(rs.getDate("reg_date"));
+					
+					list.add(pVo);		// list 객체에 데이터 추가
+				}		
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt ,rs);
+		}
+			return list;
+			
+		}
+		
+		// 특정 칼럼의 키워드를 통해 게시물 수 조회
+		public int getProductCount() {
+			return getProductCount("title", "");
+		}	
+		public int getProductCount(String column, String keyword) {
+			int count = 0;
+			String sql ="SELECT COUNT(unique_no) count FROM ("
+					+ "SELECT ROWNUM N, b.*"
+					+ "FROM (SELECT * FROM nft_product where "+column+" like ? order by reg_date desc) b"
+					+ ")";
+			
+			Connection conn = null;
+			PreparedStatement pstmt =null;		// 동적 쿼리
+			ResultSet rs = null;
+			
+			try {
+				conn = DBManager.getConnection();
+				
+				// (3단계) Statement 객체 생성
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, "%"+keyword+"%");
+				  
+				// (4단계) SQL문 실행 및 결과 처리
+				rs = pstmt.executeQuery();
+
+				// rs.next() : 다음 행(row)을 확인
+				// rs.getString("컬럼명")
+				if (rs.next()){
+					count = rs.getInt("count");
+				}		
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt ,rs);
+		}
+			return count;
+		}
+		
+		
 			
 }
 	

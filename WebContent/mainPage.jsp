@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -230,6 +231,40 @@
 		</div>
 	</div>
 	</section>
+
+
+        <!-- Pagination-->	
+	         	<c:set var="page" value="${(empty param.p)?1:param.p}"></c:set>
+				<c:set var="startNum" value="${page -(page-1) % 5}"></c:set>
+				<%-- <c:set var="lastNum" value="${Math.ceil(count/10)}"></c:set> --%>
+				<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/8), '.')}"></c:set>      
+
+        <nav aria-label="Pagination">
+            <hr class="my-0" />
+            <ul class="pagination justify-content-center my-4">
+                <c:if test="${startNum-1 > 0}">
+                <li class="page-item"><a class="page-link" href="?p=${startNum - 1}">이전</a></li>
+				</c:if>
+				<c:if test="${startNum-1 <= 0}">
+					<span class="page-item page-link" onclick="alert('이전 페이지가 없습니다.')">이전</span>
+				</c:if>
+				<c:forEach var="i" begin="0" end="4">
+					<!-- 마지막 게시물이 있는 페이지까지만 표시 -->
+					<c:if test="${(i+startNum) <= lastNum }">
+						<!-- // 해당 페이지 인 경우, 스타일 지정 -->									
+                <li class="page-item ${(page==(i+startNum))?'active':''}"><a class="page-link" href="?p=${i+startNum}&column=${param.column}&keyword=${param.keyword}">${i+startNum}</a></li>
+				</c:if>
+				</c:forEach>
+
+            	<c:if test="${startNum + 4 < lastNum}">
+            	<li class="page-item"><a class="page-link" href="?p=${startNum + 5}">다음</a></li>
+				</c:if>
+				<c:if test="${startNum + 4 >= lastNum}">
+						<span class="page-item page-link" onclick="alert('다음 페이지가 없습니다.')">다음</span>
+				</c:if>
+            </ul>
+        </nav>
+	
 	
 
 	<!-- Footer-->
