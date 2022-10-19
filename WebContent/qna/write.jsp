@@ -1,55 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>1대1문의 게시판 글쓰기</title>
-<link rel="stylesheet" type="text/css" href="notice/style.css">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<title>답글 페이지</title>
 </head>
 <body>
-
-<!--  게시판 글쓰기 영역 시작 -->
-<div align="center">
-	<h3>[1대1문의 글쓰기]</h3>
-	<!-- <form action="qnaWrite.do" method="post" enctype="multipart/form-data"> -->
-	<form method="post" name="frm" enctype="multipart/form-data">
-	<!-- enctype : 파일 첨부할때 필요한 속성 -->
-		<table class="list">
+<jsp:include page="header.jsp"/>
+	<h4 align="center"><small>[1대1문의 답변하기]</small></h4>
+	<form action="../qnaReWrite.do" method="post"  name="frm" enctype="multipart/form-data">
+		<!-- 답변글 처리 페이지로 자료를 전달 -->
+		<table class="table table-bordered">
 			<tr>
-				<th>작성자</th>
-				<td><input type="text" name="userid"></td>
+				<th class="text-center">작성자</th>
+				<td>관리자</td>
 			</tr>
 			<tr>
-				<th>이메일</th>
-				<td><input type="text" name="email"></td>
+				<th class="text-center">제목</th>
+				<td><input type="text" name="title" value="[답변]" class="form-control"></td>
 			</tr>
 			<tr>
-				<th>비밀번호</th>
-				<td><input type="password" name="pass"></td>
+				<th class="text-center">내용</th>
+				<td><textarea class="form-control" rows="5" name="content" placeholder="내용을 입력하세요."></textarea></td>
 			</tr>
-			<tr>
-				<th>제목</th>
-				<td><input type="text" name="title"></td>
-			</tr>
-			<tr>
-				<th>내용</th>
-				<td><textarea rows="15" cols="70" name="content" placeholder="내용을 입력하세요."></textarea></td>
-			</tr>
-			<tr>
-				<th>파일</th>
-				<td><input type="file" name="files"></td>
-			</tr>
+			<!-- form에서 사용자로부터 입력 받지 않고 데이터를 넘김 -->
 			<tr>
 				<td colspan="2" align="center">
 					<input type="submit" value="등록">
 					<input type="reset" value="취소" >
-					<input type="button" value="목록" onclick="location.href='qnaList.do'">
+					<input type="button" value="목록" onclick="location.href='../qnaAdminList.do'">
 				</td>
 			</tr>
+
 		</table>
 	</form>
-</div>
-
 </body>
-</html>	
+</html>

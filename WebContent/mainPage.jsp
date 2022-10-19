@@ -44,7 +44,7 @@
 				</c:if>
 					
 					<li class="nav-item"><a class="nav-link" href="community.do">커뮤니티</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">고객센터</a></li>
+					<li class="nav-item"><a class="nav-link" href="cs/index.jsp">고객센터</a></li>
 					
 				<c:if test="${control==null}">
 					<li class="nav-item"><a class="nav-link" href="login.do">마이페이지</a></li>

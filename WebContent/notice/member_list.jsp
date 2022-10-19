@@ -6,11 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>회원들이 보는 공지사항 목록</title>
-<link rel="stylesheet" type="text/css" href="notice/style.css">
 </head>
 <body>
-<h3>[공지사항 목록]</h3>
-	<table class="list">
+<jsp:include page="header.jsp"/>
+<h4 align="center"><small>[공지사항 목록]</small></h4>
+	<table class="table table-bordered">
 		<tr>
 			<th>번호</th>
 			<th>제목</th>

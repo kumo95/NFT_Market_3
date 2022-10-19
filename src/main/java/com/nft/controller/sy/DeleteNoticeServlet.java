@@ -33,7 +33,7 @@ public class DeleteNoticeServlet extends HttpServlet {
 		request.setAttribute("notice", nVo);
 
 		// 페이지 이동 : 삭제 페이지
-		RequestDispatcher dispatcher = request.getRequestDispatcher("nft/deleteNft.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("notice/delete.jsp");
 		dispatcher.forward(request, response);
 	}
 

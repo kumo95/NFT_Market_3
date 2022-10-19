@@ -62,8 +62,6 @@ public class QnaWriteServlet extends HttpServlet {
 			// 입력 양식을 통해 정보를 획득
 			/* int code = Integer.parseInt(multi.getParameter("code")); */
 			String userid = multi.getParameter("userid");
-			String email = multi.getParameter("email");
-			String pass = multi.getParameter("pass");
 			String title = multi.getParameter("title");
 			String content = multi.getParameter("content");
 			String files = multi.getFilesystemName("files");
@@ -73,8 +71,6 @@ public class QnaWriteServlet extends HttpServlet {
 
 			// pVo.setCode(code); // 입력된 상품 정보 Vo에 저장
 			qVo.setUserid(userid);
-			qVo.setEmail(email);
-			qVo.setPass(pass);
 			qVo.setTitle(title);
 			qVo.setContent(content);
 			qVo.setFiles(files);

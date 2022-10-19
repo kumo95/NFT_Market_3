@@ -18,26 +18,47 @@ import com.nft.dto.QnaVo;
 public class QnaListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		QnaDao qDao = QnaDao.getInstance();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		 QnaDao qDao = QnaDao.getInstance();
+		 //QnaVo qVo = new QnaVo();
+		  
+			/*
+			 * String column = "bno"; // 검색 내용 String keyword = ""; int page = 1;
+			 * 
+			 * // 검색양식으로부터 받은 검색 대상과 내용을 가져옴 String t_column =
+			 * request.getParameter("column"); String t_keyword =
+			 * request.getParameter("keyword"); String t_page = request.getParameter("p");
+			 * 
+			 * // 검색 대상이 ""이 아니라면 사용 if(t_page!=null && t_page.equals("")) {
+			 * page=Integer.parseInt(t_page); } if(t_keyword!=null && t_keyword.equals(""))
+			 * { keyword=t_keyword; } if(t_page!=null && t_page.equals("")) {
+			 * page=Integer.parseInt(t_page); }
+			 */
+		// 게시판 등록처리
+		// qDao.insertQna(qVo);
 
 		// 모든 QnA 리스트를 DB로부터 조회하여 출력
-		List<QnaVo> qnaList = qDao.selectAllQna();
-		
+		List<QnaVo> qnaList = qDao.selectAllQna(); // 모든 데이터
+		//List<QnaVo> qnaList = qDao.getQna(page);
+		//List<QnaVo> qnaList = qDao.getQnaList(column, keyword, page);
+		//int count = qDao.getQnaCount(column, keyword); // 디비에서 검색한 게시물 수
+
 		request.setAttribute("qnaList", qnaList);
-		
-		System.out.println(qnaList.size());
-		System.out.println("qnaList: "+ qnaList);
-		
+		//request.setAttribute("count", count);
+
+		//System.out.println(qnaList.size());
+		//System.out.println("qnaList: " + qnaList);
+
 		// 리스트 페이지로 이동
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("qna/member_list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("qna/member_list.jsp");
 		dispatcher.forward(request, response);
 
 		System.out.println("qna/member_list: " + qnaList);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 	}
 

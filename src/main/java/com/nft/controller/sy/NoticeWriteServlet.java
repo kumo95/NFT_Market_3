@@ -76,7 +76,7 @@ public class NoticeWriteServlet extends HttpServlet {
 		System.out.println("입력: "+nVo); // 입력된 상품 정보 디버깅
 		result = nDao.insertNotice(nVo); // 입력된 상품 정보 삽입
 		
-		System.out.println("result: "+ result);
+		//System.out.println("result: "+ result);
 
 		// 정상적인 상품 등록 여부 확인 / 정상 등록 메세지를 브라우저에 출력을 위해 속성값 저장
 		if (result == 1) {

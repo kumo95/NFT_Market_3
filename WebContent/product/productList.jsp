@@ -92,7 +92,7 @@
             <hr class="my-0" />
             <ul class="pagination justify-content-center my-4">
                 <c:if test="${startNum-1 > 0}">
-                <li class="page-item"><a class="page-link" href="?p=${startNum - 1}">이전</a></li>
+                <li class="page-item"><a class="page-link" href="?p=${startNum - 1}&column=${param.column}&keyword=${param.keyword}">이전</a></li>
 				</c:if>
 				<c:if test="${startNum-1 <= 0}">
 					<span class="page-item page-link" onclick="alert('이전 페이지가 없습니다.')">이전</span>
@@ -106,7 +106,7 @@
 				</c:forEach>
 
             	<c:if test="${startNum + 4 < lastNum}">
-            	<li class="page-item"><a class="page-link" href="?p=${startNum + 5}">다음</a></li>
+            	<li class="page-item"><a class="page-link" href="?p=${startNum + 5}&column=${param.column}&keyword=${param.keyword}">다음</a></li>
 				</c:if>
 				<c:if test="${startNum + 4 >= lastNum}">
 						<span class="page-item page-link" onclick="alert('다음 페이지가 없습니다.')">다음</span>

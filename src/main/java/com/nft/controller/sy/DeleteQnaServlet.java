@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.nft.dao.QnaDao;
+import com.nft.dao.ReplyDao;
 import com.nft.dto.QnaVo;
+import com.nft.dto.ReplyVo;
 
 @WebServlet("/deleteQna.do")
 public class DeleteQnaServlet extends HttpServlet {
@@ -24,17 +26,17 @@ public class DeleteQnaServlet extends HttpServlet {
 		QnaVo qVo = new QnaVo();
 
 		// 퀘리 스트링으로 전달 받은 no를 획득
-		String no = request.getParameter("no");
+		String bno = request.getParameter("bno");
 
 		// DB에서 삭제할 데이터 정보 확인
-		qVo = qDao.getQna(no);
+		qVo = qDao.getQna(bno);
 
-		System.out.println("삭제할 정보 확인: " + no);
+		System.out.println("삭제할 정보 확인: " + bno);
 
 		request.setAttribute("qna", qVo);
 
 		// 페이지 이동 : 삭제 페이지
-		RequestDispatcher dispatcher = request.getRequestDispatcher("admin_qna/delete.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("qna/delete.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -45,17 +47,17 @@ public class DeleteQnaServlet extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		String no = request.getParameter("no");
-		System.out.println("no 삭제: " + no);
+		String bno = request.getParameter("bno");
+		System.out.println("no 삭제: " + bno);
 
 		QnaDao qDao = QnaDao.getInstance();
 		QnaVo qVo = new QnaVo();
 
 		// DB로부터 해당 코드의 정보 삭제
-		qDao.deleteQna(no);
+		qDao.deleteQna(bno);
 
 		// 삭제 후 목록 페이지로 이동
-		response.sendRedirect("qnaList.do");
+		response.sendRedirect("qnaAdminList.do");
 	}
 
 }

@@ -8,10 +8,10 @@
 <title>회원 삭제 페이지</title>
 </head>
 <body>
-	<div id="wrap" align="center">
-		<h2>회원 삭제 - 관리자 페이지</h2>
+<jsp:include page="header.jsp"/>
+<h4 align="center"><small>[회원 삭제 목록]</small></h4>
 		<form action="deleteMember.do" method="post">
-			<table border="1">
+			<table class="table table-bordered">
 				<tr>
 					<th>이름</th>
 					<th>아이디</th>
@@ -42,7 +42,7 @@
 			</table>
 			<input type="hidden" name="userid" value="${member.userid}">
 			<input type="submit" value="삭제">
-			<input type="button" value="목록" onclick="memberList.do'">
+			<input type="button" value="목록" onclick="memberList.do">
 		</form>
 	</div>
 

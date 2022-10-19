@@ -19,6 +19,13 @@ table {
   	background: #f0f6f9;
 }
 
+.td {
+	border:white;
+	text-align: right; 
+	
+}
+
+
 .list th, .list td {
 	padding: 10px;
 	border: 1px solid #ddd;

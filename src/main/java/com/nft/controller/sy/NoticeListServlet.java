@@ -22,14 +22,14 @@ public class NoticeListServlet extends HttpServlet {
 		NoticeDao nDao = NoticeDao.getInstance();
 
 		// 모든 QnA 리스트를 DB로부터 조회하여 출력
-		//List<NoticeVo> noticeList = nDao.selectAllNotice();
+		List<NoticeVo> noticeList = nDao.selectAllNotice();
 		
 		
 		//System.out.println(noticeList.size());
 		//System.out.println("noticeList: " + noticeList);
 
 		// 하나의 페이지에 표시할 데이터
-		List<NoticeVo> noticeList = nDao.getNoticeList();
+		//List<NoticeVo> noticeList = nDao.getNoticeList();
 		request.setAttribute("noticeList", noticeList);
 		
 		// 리스트 페이지로 이동

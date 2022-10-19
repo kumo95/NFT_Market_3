@@ -28,7 +28,14 @@
 <a href="regist.do">상품등록</a>
 <a href="productList.do">상품 리스트</a>
 <input type="button" value="목록" onclick="location.href='productList.do'">	
+<br>
+<br>
+<a href="startbootstrap-sb-admin-gh-pages/index.html">관리자</a>
+
+
 </body>
+
+
 
 <%@ include file="footer.jsp" %>
 

@@ -8,11 +8,10 @@
 <title>상품삭제 - 관리자 페이지</title>
 </head>
 <body>
-<div id="wrap" align="center">
-<h2>상품 삭제 - 관리자 페이지</h2>
-
+<jsp:include page="header.jsp"/>
+<h4 align="center"><small>[상품 삭제 목록]</small></h4>
 <form action="deleteNft.do" method="post">
-	<table border="1">
+	<table class="table table-bordered">
 		<tr>
 			<th>만든이</th>
 			<td>${product.creator}</td>
