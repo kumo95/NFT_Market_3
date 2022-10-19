@@ -33,7 +33,6 @@
 			<th>제목</th>
 			<th>내용</th>
 			<th>파일</th>
-			<th>조회수</th>
 			<th>작성일</th>
 		</tr>
 		<!-- 게시글 목록 출력 -->
@@ -43,7 +42,6 @@
 				<td><a href="qna?bno=${qna.bno}">${qna.title}</a></td>
 				<td>${qna.content}</td>
 				<td>${qna.files}</td>
-				<td>${qna.count}</td>
 				<td>${qna.writeDate}</td>
 			</tr>
 		</c:forEach>
