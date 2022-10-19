@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+table {
+	/* 테두리를 한줄로 표현 */
+	border-collapse: collapse;
+	width: 100%;
+	/* 가운데 정렬 */
+	/* text-align: center; */
+}
+
+.list {
+	border-collapse: collapse;
+ 	border-top: 3px solid #168;
+	
+}
+
+.list th {
+	color: #168;
+  	background: #f0f6f9;
+}
+
+.td {
+	border:white;
+	text-align: right; 
+	
+}
+
+
+.list th, .list td {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+.list th:first-child, .list td:first-child {
+  border-left: 0;
+}
+
+.list th:last-child, .list td:last-child {
+  border-right: 0;
+}
