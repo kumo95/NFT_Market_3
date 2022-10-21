@@ -33,7 +33,7 @@ function checkProduct() {
 		frm.price.focus();
 		return false;
 	}
-	if(document.frm.nftUrl.value.length===0){
+	if(document.frm.nftUrl.value.length===0 && document.frm.newNftUrl.value.length===0){
 		alert("파일을 업로드 하세요");
 		frm.nftUrl.focus();
 		return false;

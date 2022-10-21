@@ -57,10 +57,12 @@ public class NoticeDao {
 
 	// 전제 목록 조회
 	public List<NoticeVo> selectAllNotice() {
-		String sql = "select * from notice";
+		String sql = "select * from notice order by no desc";
 
 		List<NoticeVo> list = new ArrayList<NoticeVo>(); // List 컬렉션 객체 생성
 
+		System.out.println("list: " + list);
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null; // 동적 쿼리
 		ResultSet rs = null;
@@ -73,6 +75,7 @@ public class NoticeDao {
 
 			// (4단계) SQL문 실행 및 결과 처리
 			rs = pstmt.executeQuery();
+			System.out.println("rs.next(): " + rs.next());
 
 			// rs.next() : 다음 행(row)을 확인
 			// rs.getString("컬럼명")

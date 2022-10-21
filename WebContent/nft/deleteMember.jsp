@@ -2,49 +2,79 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>회원 삭제 페이지</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>회원 삭제</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	crossorigin="anonymous">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+	rel="stylesheet" />
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../index/css/header.css">
 </head>
 <body>
-<jsp:include page="header.jsp"/>
-<h4 align="center"><small>[회원 삭제 목록]</small></h4>
+<jsp:include page="../header.jsp"/>
+	<h4 align="center"><small>[회원 삭제 목록]</small></h4>
 		<form action="deleteMember.do" method="post">
-			<table class="table table-bordered">
-				<tr>
-					<th>이름</th>
-					<th>아이디</th>
-					<th>비밀번호</th>
-					<th>생년월일</th>
-					<th>성별</th>
-					<th>이메일(전자지갑)</th>
-					<th>이메일(전자지갑) 비밀번호</th>
-					<th>국제번호</th>
-					<th>휴대번호</th>
-					<th>이메일 수신여부</th>
-					<th>휴대폰 수신여부</th>
-					<th>관리</th>
-				</tr>
+			<table class="table table-hover">
+				<thead class="thead-light">	
 					<tr>
-						<td>${member.name}</td>
-						<td>${member.userid}</td>
-						<td>${member.idPwd}</td>
-						<td>${member.birth}</td>
-						<td>${member.gender}</td>
-						<td>${member.e_wallet}</td>
-						<td>${member.e_walletPwd}</td>
-						<td>${member.nationPhone}</td>
-						<td>${member.phone}</td>
-						<td>${member.email_agree}</td>
-						<td>${member.phone_agree}</td>
+						<th class="text-center" style="width:7%">이름</th>
+						<th class="text-center" style="width:7%">아이디</th>
+						<th class="text-center" style="width:8%">비밀번호</th>
+						<th class="text-center" style="width:7%">생년월일</th>
+						<th class="text-center" style="width:5%">성별</th>
+						<th class="text-center" style="width:9%">이메일</th>
+						<th class="text-center" style="width:10%">이메일 비번</th>
+						<th class="text-center" style="width:5%">나라</th>
+						<th class="text-center" style="width:15%">휴대번호</th>
+						<th class="text-center" style="width:10%">email수신</th>
+						<th class="text-center" style="width:10%">phone수신</th>
+						<th class="text-center" style="width:10%">관리</th>
 					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-center" style="width:8%">${member.name}</td>
+						<td class="text-center" style="width:7%">${member.userid}</td>
+						<td class="text-center" style="width:8%">${member.idPwd}</td>
+						<td class="text-center" style="width:7%">${member.birth}</td>
+						<td class="text-center" style="width:5%">${member.gender}</td>
+						<td class="text-center" style="width:9%">${member.e_wallet}</td>
+						<td class="text-center" style="width:10%">${member.e_walletPwd}</td>
+						<td class="text-center" style="width:5%">${member.nationPhone}</td>
+						<td class="text-center" style="width:15%">${member.phone}</td>
+						<td class="text-center" style="width:3%">${member.email_agree}</td>
+						<td class="text-center" style="width:3%">${member.phone_agree}</td>
+						<td>
+							<input type="hidden" name="userid" value="${member.userid}">
+							<input type="submit" value="삭제">
+				 			<input type="button" value="목록" onclick="memberList.do">
+						</td>
+					</tr>
+				</tbody>	
 			</table>
-			<input type="hidden" name="userid" value="${member.userid}">
-			<input type="submit" value="삭제">
-			<input type="button" value="목록" onclick="memberList.do">
+				
 		</form>
-	</div>
+
 
 </body>
 </html>

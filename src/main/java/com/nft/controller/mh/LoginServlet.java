@@ -23,24 +23,31 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "member/login.jsp";			// 현재 URL 페이지
-		request.setAttribute("control", 1);
+//		request.setAttribute("control", 1);
 		
 		// 세선설정
 		HttpSession session = request.getSession();
 		// 만약, 세션 속성이 유지되고 있는 동안(즉, 로그인이 되어있는 상태)에 main.jsp 페이지로 이동
 		// session의 loginUser가 null이 아니면 이미 로그인이 되어있는 상태
 		if(session.getAttribute("loginUser") != null) {
-			//상품리스트
+			url = "mainPage.jsp";
 			ProductDao pDao = ProductDao.getInstance();
+			
+			// 모든 상품 리스트를 디비로부터 조회하여 저장		
 			List<ProductVo> productList = pDao.selectAllProducts();
 			request.setAttribute("productList", productList);
-			url = "mainPage.jsp";
+			
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+			dispatcher.forward(request,response);
 		}
-		
-		//상품리스트
 		ProductDao pDao = ProductDao.getInstance();
+
+		
+		// 모든 상품 리스트를 디비로부터 조회하여 저장		
 		List<ProductVo> productList = pDao.selectAllProducts();
 		request.setAttribute("productList", productList);
+		System.out.println(productList);
 		
 		// 페이지 이동 forward 방식
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
@@ -73,10 +80,11 @@ public class LoginServlet extends HttpServlet {
 			// 세선설정
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", mVo);
+			session.setAttribute("control", 1);
 			
 			request.setAttribute("name", mVo.getName());
 			request.setAttribute("id", mVo.getUserid());
-			request.setAttribute("control", 1);
+//			request.setAttribute("control", 1);
 			
 		}else if(result == 0){
 			System.out.println("비밀번호 불일치");
@@ -89,12 +97,6 @@ public class LoginServlet extends HttpServlet {
 //			out.close();
 			//			url = "member/login.jsp";
 		}		
-		
-		
-		//상품리스트
-		ProductDao pDao = ProductDao.getInstance();
-		List<ProductVo> productList = pDao.selectAllProducts();
-		request.setAttribute("productList", productList);
 		
 		RequestDispatcher dispatcher;
 		dispatcher = request.getRequestDispatcher(url);

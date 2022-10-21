@@ -8,6 +8,7 @@
 <script type="text/javascript" src="script/member.js"></script>
 <title>개인정보 수정페이지</title>
 </head>
+
 <%@ include file="../header.jsp" %>
 <body>
 	<form action="updateMember.do" method="post" name="frm">

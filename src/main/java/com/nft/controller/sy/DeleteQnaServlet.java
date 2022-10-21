@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.nft.dao.QnaDao;
-import com.nft.dao.ReplyDao;
+
 import com.nft.dto.QnaVo;
-import com.nft.dto.ReplyVo;
+
 
 @WebServlet("/deleteQna.do")
 public class DeleteQnaServlet extends HttpServlet {

@@ -20,18 +20,10 @@
     <!--CSS-->
     <link href="css/productDetail.css" type="text/css" rel="stylesheet" />
 </head>
-
+<%@ include file="../header.jsp" %>
 <body>
     <section class="">
-        <div class="container px-5 my-5 ">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-6">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder"><a href="mainPage.jsp">NFTique</a></h1>
-                        <p class="lead fw-normal text-muted mb-0"><a href="productList.do">상품리스트</a></p>
-                    </div>
-                </div>
-            </div>
+        <div class="container px-5 my-5 ">           
             <div class="row gx-5">
                 <div class="col-12 text-center">
                 <c:choose>
@@ -349,5 +341,5 @@
     </div> --%>
 
 </body>
-
+<%@ include file="../footer.jsp" %>
 </html>

@@ -56,21 +56,15 @@ public class QnaReWriteServlet extends HttpServlet {
 
 			// 입력 양식을 통해 정보를 획득
 			/* int code = Integer.parseInt(multi.getParameter("code")); */
-			String userid = multi.getParameter("userid");
-			String pass = multi.getParameter("pass");
 			String title = multi.getParameter("title");
 			String content = multi.getParameter("content");
-			String files = multi.getFilesystemName("files");
 			//int readcount = Integer.parseInt(multi.getParameter("readcount"));
 			//Date writeDate = Date.valueOf(multi.getParameter("writeDate"));
 			
 
 			// pVo.setCode(code); // 입력된 상품 정보 Vo에 저장
-			qVo.setUserid(userid);
-			qVo.setPass(pass);
 			qVo.setTitle(title);
 			qVo.setContent(content);
-			qVo.setFiles(files);
 			//qVo.setWriteDate(writeDate);
 			
 			System.out.println("qVo: "+qVo);
@@ -80,7 +74,7 @@ public class QnaReWriteServlet extends HttpServlet {
 		}
 
 		System.out.println("입력: "+qVo); // 입력된 상품 정보 디버깅
-		result = qDao.insertQna(qVo); // 입력된 상품 정보 삽입
+		result = qDao.reInsertQna(qVo); // 입력된 상품 정보 삽입
 		
 		System.out.println("result: "+ result);
 

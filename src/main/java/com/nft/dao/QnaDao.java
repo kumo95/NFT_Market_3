@@ -64,7 +64,7 @@ public class QnaDao {
 
 	// (사용자) 전체 qna 조회
 	public List<QnaVo> selectAllQna() {
-		String sql = "select * from qna order by bno desc";
+		String sql = "select * from qna order by bno";
 
 		List<QnaVo> list = new ArrayList<QnaVo>(); // List 컬렉션 객체 생성
 
@@ -91,7 +91,7 @@ public class QnaDao {
 				qVo.setTitle(rs.getString("title"));
 				qVo.setContent(rs.getString("content"));
 				qVo.setFiles(rs.getString("files"));
-				qVo.setWriteDate(rs.getDate("writeDate"));
+				//qVo.setWriteDate(rs.getDate("writeDate"));
 
 				list.add(qVo); // list 객체에 데이터 추가
 			}
@@ -102,7 +102,51 @@ public class QnaDao {
 		}
 		return list;
 	}
+	
+	// (관리자) 전체 qna 조회
+		public List<QnaVo> selectAllQnaAdmin() {
+			String sql = "select * from qna order by bno";
 
+			List<QnaVo> list = new ArrayList<QnaVo>(); // List 컬렉션 객체 생성
+
+			System.out.println("list: " + list);
+
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+
+			try {
+				conn = DBManager.getConnection();
+				// (3 단계) Statement 객체 생성
+				pstmt = conn.prepareStatement(sql);
+				// (4 단계) SQL문 실행 및 결과 처리 => executeQuery : 조회(select)
+				rs = pstmt.executeQuery();
+				// rs.next() : 다음 행(row)을 확인, rs.getString("컬럼명")
+				System.out.println("rs.next(): " + rs.next());
+
+				while (rs.next()) {
+					QnaVo qVo = new QnaVo();
+					// 디비로부터 회원 정보 획득
+					//qVo.setBno(rs.getInt("bno"));
+					//qVo.setUserid(rs.getString("userid")); // DB에서 가져온 정보를 pVo객체에 저장
+					qVo.setTitle(rs.getString("title"));
+					qVo.setContent(rs.getString("content"));
+					//qVo.setFiles(rs.getString("files"));
+					//qVo.setWriteDate(rs.getDate("writeDate"));
+
+					list.add(qVo); // list 객체에 데이터 추가
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+			return list;
+		}
+
+	
+	
+	
 	// 단일 qna 조회 (bno) => 단일 qna 정보 반환
 	public QnaVo selectQnaBybno(String bno) {
 		String sql = "select * from qna where bno=?";
@@ -217,7 +261,7 @@ public class QnaDao {
 		int result = -1;
 		Connection conn = null;
 		PreparedStatement pstmt = null; // 동적 쿼리
-		String sql = "insert into qna(bno,title,content,writeDate) values(qna_seq.nextval, ?, ?, ?)";
+		String sql = "insert into qna(bno,title,content) values(qna_seq.nextval, ?, ?)";
 
 		try {
 			conn = DBManager.getConnection();
@@ -227,7 +271,6 @@ public class QnaDao {
 			// pstmt.setInt(1, qVo.getNo());
 			pstmt.setString(1, qVo.getTitle());
 			pstmt.setString(2, qVo.getContent());
-			pstmt.setDate(3, qVo.getWriteDate()); // 날짜형
 
 			// (4 단계) SQL문 실행 및 결과 처리
 			// executeUpdate : 삽입(insert/update/delete)

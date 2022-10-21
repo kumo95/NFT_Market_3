@@ -45,6 +45,7 @@ public class DeleteNftServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();	
 		
 		String unique_no = request.getParameter("unique_no");
+		System.out.println("unique_no 삭제: "+ unique_no);
 		
 		ProductDao pDao = ProductDao.getInstance();
 		ProductVo pVo = new ProductVo();

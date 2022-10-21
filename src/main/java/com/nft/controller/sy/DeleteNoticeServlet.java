@@ -30,6 +30,8 @@ public class DeleteNoticeServlet extends HttpServlet {
 		// DB에서 삭제할 데이터 정보 확인
 		nVo = nDao.getNotice(no);
 
+		System.out.println("삭제할 정보 확인: " + no);
+		
 		request.setAttribute("notice", nVo);
 
 		// 페이지 이동 : 삭제 페이지
@@ -45,6 +47,7 @@ public class DeleteNoticeServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		String no = request.getParameter("no");
+		System.out.println("no 삭제: " + no);
 
 		NoticeDao nDao = NoticeDao.getInstance();
 		NoticeVo nVo = new NoticeVo();

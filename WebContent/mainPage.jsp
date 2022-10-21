@@ -21,8 +21,10 @@
 <link href="index/css/styles.css" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
+<%@ include file="header.jsp"%>
 <body>
-	<!-- Navigation-->
+
+	<%-- <!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
 			<a class="navbar-brand" href="mainPage.jsp">NFTique</a>
@@ -68,7 +70,7 @@
 		</div>
 	</nav>
 	
-
+ --%>
 		
 	
 	
@@ -88,6 +90,7 @@
 		<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 <!--  상품리스트 DB연결 -->
 		<c:forEach var="product" items="${productList}">
+			${productList}
 			<div class="col mb-5">
 				<div class="card h-100">
 				<!-- Product image  -->
@@ -268,13 +271,13 @@
 	
 
 	<!-- Footer-->
-	<footer class="py-5 bg-light">
+	<!-- <footer class="py-5 bg-light">
 		<div class="container">
 			<p class="m-0 text-center text-black">Copyright &copy; NFTique
 				2022</p>
 		</div>
-	</footer>
-
+	</footer> -->
+<%@ include file="footer.jsp"%>
 
 	<!-- Bootstrap core JS-->
 	<script

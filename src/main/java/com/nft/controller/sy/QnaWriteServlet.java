@@ -29,7 +29,7 @@ public class QnaWriteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {	
 	
-		RequestDispatcher dispatcher = request.getRequestDispatcher("qna/write.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("qna/member_write.jsp");
 		dispatcher.forward(request, response); // 포워드 방식으로 페이지 이동
 	}
 
@@ -96,7 +96,7 @@ public class QnaWriteServlet extends HttpServlet {
 			System.out.println("계시글 등록 실패");
 			request.setAttribute("message", "상품 등록 실패");
 		}
-		response.sendRedirect("qnaList.do"); // 상품 등록 후 리스트 확인 위해 페이지 이동
+		response.sendRedirect("qnaMemberList.do"); // 상품 등록 후 리스트 확인 위해 페이지 이동
 
 		/*
 		 * RequestDispatcher dispatcher = request.getRequestDispatcher("qna/list.jsp");

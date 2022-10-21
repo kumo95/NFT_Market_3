@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import "reset.css";
+
+.nft-footer{
+	width: 1280px;
+	background-color: #F8F9FA !important; 
+}
+
+.nft-container{
+	font-size:14px !important;
+	padding:50px 0px 50px 100px !important;
+	vertical-align:middle !important; 	
+}
+
+.nft-container p{
+	margin-bottom:10px !important;
+}

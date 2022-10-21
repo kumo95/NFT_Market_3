@@ -18,7 +18,7 @@ hr{
 
 .main-content{
     width: 1280px;
-    padding-left: 50px;
+    padding-left: 0px;
 }
 
 #content-title{
@@ -36,7 +36,7 @@ hr{
 
 .content-right{
     margin: 20px 10px 20px 10px;
-    width: 80%;
+    width: 60%;
 }
 
 div.content-password td{

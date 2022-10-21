@@ -31,7 +31,7 @@ public class ProductDao {
 		int result= -1;
 		Connection conn = null;
 		PreparedStatement pstmt = null;		// 동적 쿼리
-		String sql_insert = "insert into nft_product values(?,?,?,?,?,?,?,?,?)";			
+		String sql_insert = "insert into nft_product values(?,?,nft_seq.nextval,?,?,?,?,?,?)";			
 		
 		try {
 		conn = DBManager.getConnection();
@@ -41,14 +41,14 @@ public class ProductDao {
 //		pstmt.setInt(1, pVo.getCode());
 		pstmt.setString(1, pVo.getCreator());
 		pstmt.setString(2, pVo.getOwner());
-		pstmt.setString(3, pVo.getUnique_no());
-		pstmt.setString(4, pVo.getP_name());
+		// pstmt.setString(3, pVo.getUnique_no());
+		pstmt.setString(3, pVo.getP_name());
 		//pstmt.setInt(5, pVo.getPrice());
-		pstmt.setDouble(5, pVo.getPrice());
-		pstmt.setString(6, pVo.getNftUrl());
-		pstmt.setString(7, pVo.getDescription());
-		pstmt.setInt(8, pVo.getEdition());
-		pstmt.setDate(9, pVo.getReg_date());		// 날짜형
+		pstmt.setDouble(4, pVo.getPrice());
+		pstmt.setString(5, pVo.getNftUrl());
+		pstmt.setString(6, pVo.getDescription());
+		pstmt.setInt(7, pVo.getEdition());
+		pstmt.setDate(8, pVo.getReg_date());		// 날짜형
 		
 		// (4단계)SQL문 실행 및 결과 처리
 		result = pstmt.executeUpdate();		// 쿼리 수행

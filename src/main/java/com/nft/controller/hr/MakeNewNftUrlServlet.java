@@ -1,4 +1,4 @@
-package com.nft.controller;
+package com.nft.controller.hr;
 
 import java.io.IOException;
 
@@ -9,20 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/makeNFT.do")
-public class MakeNFT extends HttpServlet {
+
+@WebServlet("/makeNewNftUrl.do")
+public class MakeNewNftUrlServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String newNftUrl = request.getParameter("newNftUrl");
 		
-		// 페이지 이동
-		RequestDispatcher dispatcher = request.getRequestDispatcher("product/makeNFT.jsp");
-		dispatcher.forward(request, response);
+		request.setAttribute("fileControl", 1);
+		request.setAttribute("newNftUrl", newNftUrl);
 		
-		//response.sendRedirect(".do");
+		
+		// 페이지로 이동
+		RequestDispatcher dispatcher = request.getRequestDispatcher("product/regist.jsp");
+		dispatcher.forward(request, response);	
+		
 	}
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

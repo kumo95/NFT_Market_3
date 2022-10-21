@@ -14,7 +14,7 @@ import com.nft.dao.ProductDao;
 import com.nft.dto.ProductVo;
 
 
-@WebServlet("/nftDtail.do")
+@WebServlet("/nftDetail.do")
 public class NftDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,13 +23,13 @@ public class NftDetailServlet extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
-		String code = request.getParameter("code");
+		String unique_no = request.getParameter("unique_no");
 		//out.println(code);
 		
 		ProductDao pDao = ProductDao.getInstance();
 		ProductVo pVo = new ProductVo();
 		
-		pVo = pDao.selectProductByCode(code);
+		pVo = pDao.selectProductByCode(unique_no);
 		//System.out.println(pVo);
 		
 		request.setAttribute("product", pVo);

@@ -30,7 +30,7 @@
 <input type="button" value="목록" onclick="location.href='productList.do'">	
 <br>
 <br>
-<a href="startbootstrap-sb-admin-gh-pages/index.html">관리자</a>
+<a href="admin-bootstrap/index.jsp">관리자</a>
 
 
 </body>

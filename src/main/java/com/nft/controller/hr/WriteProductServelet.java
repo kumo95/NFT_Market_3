@@ -21,6 +21,7 @@ public class WriteProductServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// 페이지로 이동
 		RequestDispatcher dispatcher = request.getRequestDispatcher("product/regist.jsp");
 		dispatcher.forward(request, response);
@@ -33,8 +34,11 @@ public class WriteProductServelet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
+		
 		ProductVo pVo = new ProductVo();
 		ProductDao pDao = ProductDao.getInstance();
+		
+		
 		
 		int result = -1;
 		String savePath = "upload";
@@ -42,8 +46,7 @@ public class WriteProductServelet extends HttpServlet {
 		String uploadFilePath = context.getRealPath(savePath);
 		System.out.println("저장파일 서버경로: "+uploadFilePath);
 		int uploadFileSizeLimit = 5* 1024 * 1024;
-		String encType = "UTF-8";
-		
+		String encType = "UTF-8";		
 		try {
 		
 		MultipartRequest multi = new MultipartRequest(
@@ -63,6 +66,9 @@ public class WriteProductServelet extends HttpServlet {
 		//int price = Integer.parseInt(multi.getParameter("price"));
 		Double price = Double.parseDouble(multi.getParameter("price"));
 		String nftUrl = multi.getFilesystemName("nftUrl");
+		System.out.println(nftUrl);
+		String newNftUrl = multi.getParameter("newNftUrl");
+		System.out.println("확인1"+newNftUrl);
 		String description = multi.getParameter("description");
 		int edition = Integer.parseInt(multi.getParameter("edition"));
 		Date reg_date = Date.valueOf(multi.getParameter("reg_date"));
@@ -73,15 +79,26 @@ public class WriteProductServelet extends HttpServlet {
 //		System.out.println(description);
 //		System.out.println(pictureurl);
 //		System.out.println(reg_date);
-		System.out.println(pVo);
+//		System.out.println(pVo);
 		
 //		pVo.setCode(code);
+//		System.out.println(newNftUrl != null);
+//		System.out.println(newNftUrl != "");
+//		System.out.println(!newNftUrl.equals(""));
+//		System.out.println(!newNftUrl.equals(null));
 		pVo.setCreator(creator);
 		pVo.setOwner(owner);
 		pVo.setUnique_no(unique_no);
 		pVo.setP_name(p_name);
 		pVo.setPrice(price);
-		pVo.setNftUrl(nftUrl);
+//		if(newNftUrl != "" || newNftUrl != null) {
+		if(!newNftUrl.equals("")) {
+			pVo.setNftUrl(newNftUrl);
+			System.out.println("확인2"+newNftUrl);
+		}else {
+			pVo.setNftUrl(nftUrl);
+			System.out.println(nftUrl);
+		}
 		pVo.setDescription(description);
 		pVo.setEdition(edition);
 		pVo.setReg_date(reg_date);

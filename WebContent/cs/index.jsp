@@ -9,6 +9,8 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
+
+<%-- <%@include file="../header.jsp" %> --%>
 <title>고객센터 메인</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
@@ -22,10 +24,10 @@
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link rel="stylesheet" type="text/css" href="csMain.css">
+<link rel="stylesheet" type="text/css" href="../index/css/header.css">
 </head>
+<jsp:include page="../header.jsp"/>
 <body>
-<jsp:include page="/index/header.jsp"/>
-
 	<!-- Icons Grid-->
 	<section class="features-icons bg-light text-center">
 		<div class="container">
@@ -38,7 +40,7 @@
 						<h3>NOTICE</h3>
 						<p class="lead mb-0">공지사항을 확인하세요.</p>
 						<div>
-							<button type="button" onclick="location='../noticeListMember.do'">공지사항</button>
+							<button type="button" class="btn btn-primary" onclick="location='../noticeListMember.do'">공지사항</button>
 						</div>
 					</div>
 				</div>
@@ -51,7 +53,7 @@
 						<h3>QnA</h3>
 						<p class="lead mb-0">1대1 문의를 해보세요.</p>
 						<div>
-							<button type="button" onclick="location='../qnaWrite.do'">QnA 작성</button>
+							<button type="button" class="btn btn-primary" onclick="location='../qnaWrite.do'">QnA 작성</button>
 						</div>
 					</div>
 				</div>
@@ -59,9 +61,9 @@
 		</div>
 	</section>
 	 <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="csMain.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<jsp:include page="../footer.jsp"/>
 </body>
 </html>
