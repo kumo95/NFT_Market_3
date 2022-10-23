@@ -32,12 +32,12 @@ public class Main {
 			//그 위에 덮씌울 이미지를 불러온다. 우리가 준비한 사진
 			if(select.equals("1")) {
 				System.out.println(1);
-				image2 = ImageIO.read(getClass().getClassLoader().getResource("트리1.png"));
+				image2 = ImageIO.read(getClass().getClassLoader().getResource("할로윈1.png"));
 			} if(select.equals("2")) {
-				image2 = ImageIO.read(getClass().getClassLoader().getResource("고양이1.png"));
+				image2 = ImageIO.read(getClass().getClassLoader().getResource("트리1.png"));
 				System.out.println(2);
 			} if(select.equals("3")){
-				image2 = ImageIO.read(getClass().getClassLoader().getResource("개1.png"));
+				image2 = ImageIO.read(getClass().getClassLoader().getResource("네온1.png"));
 				System.out.println(3);
 			}
 			

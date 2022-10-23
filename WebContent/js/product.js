@@ -13,12 +13,7 @@ function checkProduct() {
 		frm.owner.focus();
 		return false;
 	}
-	if(document.frm.unique_no.value.length===0){
-		alert("유니크 번호 생성");
-		frm.unique_no.focus();
-		return false;
-	}
-		if(document.frm.p_name.value.length===0){
+	if(document.frm.p_name.value.length===0){
 		alert("상품명을 입력하세요.");
 		frm.p_name.focus();
 		return false;

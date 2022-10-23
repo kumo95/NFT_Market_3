@@ -12,21 +12,24 @@
 	<header class="nft-header">
 		<div class="header-area">
 			<div class="title-area">
-				<a href="mainPage.jsp">NFTique</a>
+				<a href="main.do">NFTique</a>
 			</div>
 			<div class="list-area">
 				<c:if test="${control==1}">
 					<a href="productList.do">상품</a>
 					<a href="regist.do">창조</a>
 					<a href="community.do">커뮤니티</a>
-					<a href="cs/index.jsp">고객센터</a>
+					<a href="cs.do">고객센터</a>
 					<a href="myPage.do">마이페이지</a>
+					<c:if test="${loginUser.userid == 'admin'}">
+						<a href="admin.do">관리자페이지</a>
+					</c:if>
 				</c:if>
 				<c:if test="${control==null}">
 					<a href="productList.do">상품</a>
 					<a href="login.do">창조</a>
 					<a href="community.do">커뮤니티</a>
-					<a href="cs/index.jsp">고객센터</a>
+					<a href="cs.do">고객센터</a>
 					<a href="login.do">마이페이지</a>
 				</c:if>
 			</div>

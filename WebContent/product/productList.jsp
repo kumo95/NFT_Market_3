@@ -115,7 +115,7 @@
         </nav>
    
    
-<a href="regist.do">상품등록</a>	
+<%-- <a href="regist.do">상품등록</a>	
 <div>상품 ${count}개</div>    
 				<table>
 					<tr>
@@ -123,7 +123,7 @@
 						<div><span>${(empty param.p)?1:param.p }</span>/${lastNum} pages</div>		
 						</td>
 					</tr>
-				</table>     
+				</table>      --%>
         
 </body>
 <%@ include file="../footer.jsp" %>

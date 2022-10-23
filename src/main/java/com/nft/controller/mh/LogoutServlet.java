@@ -24,7 +24,7 @@ public class LogoutServlet extends HttpServlet {
 		// 리다이렉트 방식 페이지 이동
 //		response.sendRedirect("member/login.jsp");
 		// 포워드 방식 페이지 이동
-		RequestDispatcher dispatcher = request.getRequestDispatcher("mainPage.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("main.do");
 		dispatcher.forward(request, response);
 		
 		

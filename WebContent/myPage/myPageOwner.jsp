@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css 이름을 변경해주세요. -->
     <link rel="stylesheet" href="css/myPage_base.css">
-    <title>마이페이지 장바구니</title>
+    <title>마이페이지</title>
 
 </head>
 <%@ include file="../header.jsp" %>
@@ -66,7 +66,7 @@
             <!-- 모든 myPage의 목록은 동일해야합니다. -->
             <h2 class="navbar-items" id="title-navbar">나의 NFT 컬렉션</h2>
             <a class="navbar-items" href="">개인정보</a>
-            <a class="navbar-items" href="ownerProduct.do?owner=${loginUser.userid}">나의NFT</a>
+            <a class="navbar-items" href="creatorProduct.do?creator=${loginUser.userid}">나의NFT</a>
             <a class="navbar-items" href="ownerProduct.do?owner=${loginUser.userid}">판매NFT</a>
             <a class="navbar-items" href="cartList.do?userid=${loginUser.userid}">장바구니</a>
             <a class="navbar-items" href="">즐겨찾기</a>
@@ -90,6 +90,7 @@
                             <th>고유번호</th>
                             <th>창조자</th>
                             <th>등록날짜</th>
+                            <th>판매등록</th>
                         </tr>
 
                  <c:forEach var="List" items="${List}">  
@@ -100,17 +101,9 @@
                             <td>${List.unique_no}</td>
                             <td>${List.creator}</td>
                             <td>${List.reg_date}</td>
+                            <td><a href="#">판매등록</a></td>
                         </tr>
                  </c:forEach>
-                        
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
 
                     </table>
                 </form>

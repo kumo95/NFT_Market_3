@@ -13,7 +13,7 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
-<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link href="admin-bootstrap/css/styles.css" rel="stylesheet" type="text/css">
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="../index/css/header.css">
@@ -26,19 +26,19 @@
 				<div class="sb-sidenav-menu">
 					<div class="nav">
 
-						<a class="nav-link" href="../memberList.do"> 회원관리 </a>
+						<a class="nav-link" href="memberList.do"> 회원관리 </a>
 						<!-- Divider -->
 						<hr class="sidebar-divider">
 
-						<a class="nav-link" href="../nftList.do"> 상품관리 </a>
+						<a class="nav-link" href="nftList.do"> 상품관리 </a>
 						<!-- Divider -->
 						<hr class="sidebar-divider">
 
-						<a class="nav-link" href="../noticeList.do"> 공지사항 관리 </a>
+						<a class="nav-link" href="noticeList.do"> 공지사항 관리 </a>
 						<!-- Divider -->
 						<hr class="sidebar-divider">
 
-						<a class="nav-link" href="../qnaAdminList.do"> QnA 관리</a>
+						<a class="nav-link" href="qnaAdminList.do"> QnA 관리</a>
 
 					</div>
 				</div>
@@ -132,15 +132,15 @@
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
-	<script src="js/scripts.js"></script>
+	<script src="admin-bootstrap/js/scripts.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
 		crossorigin="anonymous"></script>
-	<script src="assets/demo/chart-area-demo.js"></script>
-	<script src="assets/demo/chart-bar-demo.js"></script>
+	<script src="admin-bootstrap/assets/demo/chart-area-demo.js"></script>
+	<script src="admin-bootstrap/assets/demo/chart-bar-demo.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
 		crossorigin="anonymous"></script>
-	<script src="js/datatables-simple-demo.js"></script>
+	<script src="admin-bootstrap/js/datatables-simple-demo.js"></script>
 <jsp:include page="../footer.jsp"/>
 </body>
 </html>

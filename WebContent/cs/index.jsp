@@ -23,8 +23,8 @@
 	href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link rel="stylesheet" type="text/css" href="csMain.css">
-<link rel="stylesheet" type="text/css" href="../index/css/header.css">
+<link rel="stylesheet" type="text/css" href="cs/csMain.css">
+<link rel="stylesheet" type="text/css" href="index/css/header.css">
 </head>
 <jsp:include page="../header.jsp"/>
 <body>
@@ -40,7 +40,7 @@
 						<h3>NOTICE</h3>
 						<p class="lead mb-0">공지사항을 확인하세요.</p>
 						<div>
-							<button type="button" class="btn btn-primary" onclick="location='../noticeListMember.do'">공지사항</button>
+							<button type="button" class="btn btn-primary" onclick="location='noticeListMember.do'">공지사항</button>
 						</div>
 					</div>
 				</div>
@@ -53,7 +53,7 @@
 						<h3>QnA</h3>
 						<p class="lead mb-0">1대1 문의를 해보세요.</p>
 						<div>
-							<button type="button" class="btn btn-primary" onclick="location='../qnaWrite.do'">QnA 작성</button>
+							<button type="button" class="btn btn-primary" onclick="location='qnaWrite.do'">QnA 작성</button>
 						</div>
 					</div>
 				</div>

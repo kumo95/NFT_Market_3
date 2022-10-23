@@ -61,7 +61,7 @@
             <!-- 모든 myPage의 목록은 동일해야합니다. -->
             <h2 class="navbar-items" id="title-navbar">나의 NFT 컬렉션</h2>
             <a class="navbar-items" href="">개인정보</a>
-            <a class="navbar-items" href="ownerProduct.do?owner=${loginUser.userid}">나의NFT</a>
+            <a class="navbar-items" href="creatorProduct.do?creator=${loginUser.userid}">나의NFT</a>
             <a class="navbar-items" href="ownerProduct.do?owner=${loginUser.userid}">판매NFT</a>
             <a class="navbar-items" href="cartList.do?userid=${loginUser.userid}">장바구니</a>
             <a class="navbar-items" href="">즐겨찾기</a>

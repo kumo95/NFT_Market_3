@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="login-title">
-		<a href="mainPage.jsp"><h1 id="title-size">NFT Market</h1></a>
+		<a href="main.do"><h1 id="title-size">NFT Market</h1></a>
 	</div>
 	<form class="text-form" action="signUp.do" method="post" name="frm">
 		<div class="signUp-form">

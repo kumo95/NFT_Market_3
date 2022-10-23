@@ -87,13 +87,13 @@
                 <div class="col-lg-6 col-xl-4">
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold text-muted">*</div>
+                            <div class="small text-uppercase fw-bold text-muted">~10/31일까지</div>
                             <div class="col mb-5 mb-5 mb-xl-0">
                                 <div class="text-center">
                                     <img class="img-fluid rounded-circle mb-4 px-4"
-                                        src="upload/background1.PNG" alt="..." />
-                                    <h5 class="fw-bolder">크리스마스</h5>
-                                    <div class="fst-italic text-muted">트리</div>
+                                        src="upload/1.PNG" alt="..." />
+                                    <h5 class="fw-bolder">할로윈 친구들</h5>
+                                    <div class="fst-italic text-muted"></div>
                                 </div>
                             </div>
                             <div class="d-grid"><a class="btn btn-outline-primary" href="makeBackground.do?nftUrl=${nftUrl}&select=1">선택하기</a></div>
@@ -105,13 +105,13 @@
                 <div class="col-lg-6 col-xl-4">
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold text-muted">*</div>
+                            <div class="small text-uppercase fw-bold text-muted">~12/25일까지</div>
                             <div class="col mb-5 mb-5 mb-xl-0">
                                 <div class="text-center">
                                     <img class="img-fluid rounded-circle mb-4 px-4"
-                                        src="upload/background2.PNG" alt="..." />
-                                    <h5 class="fw-bolder">Flower</h5>
-                                    <div class="fst-italic text-muted">야옹</div>
+                                        src="upload/2.PNG" alt="..." />
+                                    <h5 class="fw-bolder">크리스마스 트리</h5>
+                                    <div class="fst-italic text-muted"></div>
                                 </div>
                             </div>
                             <div class="d-grid"><a class="btn btn-primary" href="makeBackground.do?nftUrl=${nftUrl}&select=2">선택하기</a></div>
@@ -127,9 +127,9 @@
                             <div class="col mb-5 mb-5 mb-xl-0">
                                 <div class="text-center">
                                     <img class="img-fluid rounded-circle mb-4 px-4"
-                                        src="upload/background3.PNG" alt="..." />
-                                    <h5 class="fw-bolder">Neon sign</h5>
-                                    <div class="fst-italic text-muted">멍멍</div>
+                                        src="upload/3.PNG" alt="..." />
+                                    <h5 class="fw-bolder">네온사인</h5>
+                                    <div class="fst-italic text-muted"></div>
                                 </div>
                             </div>
 

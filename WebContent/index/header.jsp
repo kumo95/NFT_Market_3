@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,27 +9,36 @@
 <link rel="stylesheet" type="text/css" href="index/css/header.css">
 </head>
 <body>
-<!-- Header-->
-	<header class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container px-4 px-lg-5">
-			<a class="navbar-brand" href="#!">NFTique</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-					<li class="nav-item"><a class="nav-link" href="#!">상품</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">창조</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">고객센터</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">마이페이지</a></li>
-				</ul>
-				<form class="d-flex">
-					<button class="btn btn" type="button">회원가입</button>
-					<button class="btn btn" type="button">로그인</button>
-				</form>
+	<header class="nft-header">
+		<div class="header-area">
+			<div class="title-area">
+				<a href="main.do">NFTique</a>
+			</div>
+			<div class="list-area">
+				<c:if test="${control==1}">
+					<a href="productList.do">상품</a>
+					<a href="regist.do">창조</a>
+					<a href="community.do">커뮤니티</a>
+					<a href="cs.do">고객센터</a>
+					<a href="myPage.do">마이페이지</a>
+				</c:if>
+				<c:if test="${control==null}">
+					<a href="productList.do">상품</a>
+					<a href="login.do">창조</a>
+					<a href="community.do">커뮤니티</a>
+					<a href="cs.do">고객센터</a>
+					<a href="login.do">마이페이지</a>
+				</c:if>
+			</div>
+			<div class="login-area">
+				<c:if test="${control==null}">
+					<a href="signUp.do">회원가입</a>
+					<a href="login.do">로그인</a>
+				</c:if>
+				<c:if test="${control==1}">
+					<a href="updateMember.do">개인정보변경</a>
+					<a href="logout.do">로그아웃</a>
+				</c:if>
 			</div>
 		</div>
 	</header>

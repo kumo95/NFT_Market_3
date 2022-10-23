@@ -30,24 +30,8 @@ public class LoginServlet extends HttpServlet {
 		// 만약, 세션 속성이 유지되고 있는 동안(즉, 로그인이 되어있는 상태)에 main.jsp 페이지로 이동
 		// session의 loginUser가 null이 아니면 이미 로그인이 되어있는 상태
 		if(session.getAttribute("loginUser") != null) {
-			url = "mainPage.jsp";
-			ProductDao pDao = ProductDao.getInstance();
-			
-			// 모든 상품 리스트를 디비로부터 조회하여 저장		
-			List<ProductVo> productList = pDao.selectAllProducts();
-			request.setAttribute("productList", productList);
-			
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-			dispatcher.forward(request,response);
+			url = "main.do";
 		}
-		ProductDao pDao = ProductDao.getInstance();
-
-		
-		// 모든 상품 리스트를 디비로부터 조회하여 저장		
-		List<ProductVo> productList = pDao.selectAllProducts();
-		request.setAttribute("productList", productList);
-		System.out.println(productList);
 		
 		// 페이지 이동 forward 방식
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
@@ -72,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if(result == 1) {
 //			System.out.println("암호 일치");
-			url = "mainPage.jsp";
+			url = "main.do";
 			
 			MemberVo mVo = mDao.getMember(userId);
 //			System.out.println("회원 이름" +  mVo.getName());
@@ -98,8 +82,7 @@ public class LoginServlet extends HttpServlet {
 			//			url = "member/login.jsp";
 		}		
 		
-		RequestDispatcher dispatcher;
-		dispatcher = request.getRequestDispatcher(url);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request,response);
 		
 	}

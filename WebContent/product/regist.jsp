@@ -14,7 +14,7 @@
 <%@ include file="../header.jsp"%>
 <body>
 
-	<form action="regist.do" method="post" enctype="multipart/form-data"
+	<form method="post" enctype="multipart/form-data"
 		name="frm">
 		<div class="container">
 			<div class="div1">
@@ -49,10 +49,9 @@
 				</div>
 				<div>
 					<div>
-						기존 파일 사용 : <input type="file" name="nftUrl"><br> 
-						<input
-							type="hidden" name="newNftUrl" value="${newNftUrl}"> 새로운
-						파일 사용 : <input type="button" value="NFT 제작"
+						기존 파일 사용 :<input type="file" name="nftUrl"><br> 
+						<input type="hidden" name="newNftUrl" value="${newNftUrl}"> 
+						새로운 파일 사용 : <input type="button" value="NFT 제작"
 							onclick="location.href='makeNFT.do?newNftUrl=${newNftUrl}'"
 							style="padding: 0px; width: 80px; height: 25px; font-size: 12px; line-height: 25px;">
 						<c:if test="${fileControl==null}">
@@ -82,9 +81,8 @@
 				</div>
 			</div>
 			<div>
-				상품을 등록하시겠습니까? <input type="submit" value="등록"
-					onclick="return checkProduct()"> <input type="reset"
-					value="취소">
+				상품을 등록하시겠습니까? <input type="submit" value="등록" onclick="return checkProduct()"> 
+				<input type="reset" value="취소">
 			</div>
 		</div>
 	</form>

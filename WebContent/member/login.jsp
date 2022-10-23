@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="login-title">
-        <h1 id="login-size"><a href="mainPage.jsp">NFTique</a></h1>
+        <h1 id="login-size"><a href="main.do">NFTique</a></h1>
     </div>
     <div class="login-form">
         <form action="login.do" method="post" name="frm1">
