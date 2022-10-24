@@ -14,7 +14,7 @@
 <%@ include file="../header.jsp"%>
 <body>
 
-	<form method="post" enctype="multipart/form-data"
+	<form method="post" action="regist.do" enctype="multipart/form-data"
 		name="frm">
 		<div class="container">
 			<div class="div1">
@@ -49,8 +49,9 @@
 				</div>
 				<div>
 					<div>
-						기존 파일 사용 :<input type="file" name="nftUrl"><br> 
-						<input type="hidden" name="newNftUrl" value="${newNftUrl}"> 
+						기존 파일 사용 :<input type="file" name="nftUrl"><br><br> 
+						** 새로운 파일을 사용할 경우 NFT 제작 버튼을 먼저 눌러주세요 **<br>
+						<input type="hidden" name="newNftUrl" value="${newNftUrl}">
 						새로운 파일 사용 : <input type="button" value="NFT 제작"
 							onclick="location.href='makeNFT.do?newNftUrl=${newNftUrl}'"
 							style="padding: 0px; width: 80px; height: 25px; font-size: 12px; line-height: 25px;">
@@ -64,7 +65,7 @@
 					</div>
 				</div>
 				<div>
-					<div>작품 설명</div>
+					<div><br>작품 설명</div>
 					<textarea id="content" name="description" cols="80" rows="10"
 						placeholder="상품 설명을 입력하세요."></textarea>
 				</div>

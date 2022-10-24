@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 		String userId = request.getParameter("userId");		// 입력 양식으로 부터 가져온 ID
 		String idPwd = request.getParameter("idPwd");	// 입력 양식으로 부터 가져온 PWD
 		
-		// 디비 연동 후, 가져올 (아이디,암호)
+		// 디비 연동 후 회원정보에 맞는 아이디, 비밀번호인지 확인
 		int result = mDao.checkUser(userId, idPwd);
 		
 		if(result == 1) {
@@ -68,18 +68,19 @@ public class LoginServlet extends HttpServlet {
 			
 			request.setAttribute("name", mVo.getName());
 			request.setAttribute("id", mVo.getUserid());
-//			request.setAttribute("control", 1);
 			
 		}else if(result == 0){
-			System.out.println("비밀번호 불일치");
+//			System.out.println("비밀번호 불일치");
+			out.println("<html><head>");
+			out.println("<script> alert('비밀번호가 일치하지 않습니다.'); location.href='login.do'; </script>");
+			out.println("<body></body></html>"); 
+			out.close();
 		}else {
-			System.out.println("존재하지 않는 회원입니다.");
-//			out.println("<html><head>");
-//			out.println("<script> alert('존재하지 않는 회원입니다.') </script>");
-//			out.println("<body></body></html>");
-//			out.println("<script>alert('알럿메세지'); location.href='"+PageUrl+"';</script>"); 
-//			out.close();
-			//			url = "member/login.jsp";
+//			System.out.println("존재하지 않는 회원입니다.");
+			out.println("<html><head>");
+			out.println("<script> alert('존재하지 않는 회원입니다.'); location.href='login.do'; </script>");
+			out.println("<body></body></html>"); 
+			out.close();
 		}		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);

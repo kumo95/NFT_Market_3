@@ -13,6 +13,7 @@
 	<form action="login.do" name="frm">
 		아이디 : ${userid}입니다.
 		<br>
+		<br>
 		<a href="login.do">로그인하기</a>
 		<a href="findIdPwd.do">비밀번호 찾기</a>
 	</form>

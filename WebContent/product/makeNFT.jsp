@@ -91,7 +91,7 @@
                             <div class="col mb-5 mb-5 mb-xl-0">
                                 <div class="text-center">
                                     <img class="img-fluid rounded-circle mb-4 px-4"
-                                        src="upload/1.PNG" alt="..." />
+                                        src="upload/1.PNG" onerror="this.onerror=null; this.src='./subImg/1.PNG';" alt="..." />
                                     <h5 class="fw-bolder">할로윈 친구들</h5>
                                     <div class="fst-italic text-muted"></div>
                                 </div>
@@ -109,12 +109,12 @@
                             <div class="col mb-5 mb-5 mb-xl-0">
                                 <div class="text-center">
                                     <img class="img-fluid rounded-circle mb-4 px-4"
-                                        src="upload/2.PNG" alt="..." />
+                                        src="upload/2.PNG" onerror="this.onerror=null; this.src='./subImg/2.PNG';" alt="..." />
                                     <h5 class="fw-bolder">크리스마스 트리</h5>
                                     <div class="fst-italic text-muted"></div>
                                 </div>
                             </div>
-                            <div class="d-grid"><a class="btn btn-primary" href="makeBackground.do?nftUrl=${nftUrl}&select=2">선택하기</a></div>
+                            <div class="d-grid"><a class="btn btn-outline-primary" href="makeBackground.do?nftUrl=${nftUrl}&select=2">선택하기</a></div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                             <div class="col mb-5 mb-5 mb-xl-0">
                                 <div class="text-center">
                                     <img class="img-fluid rounded-circle mb-4 px-4"
-                                        src="upload/3.PNG" alt="..." />
+                                        src="upload/3.PNG" onerror="this.onerror=null; this.src='./subImg/3.PNG';" alt="..." />
                                     <h5 class="fw-bolder">네온사인</h5>
                                     <div class="fst-italic text-muted"></div>
                                 </div>

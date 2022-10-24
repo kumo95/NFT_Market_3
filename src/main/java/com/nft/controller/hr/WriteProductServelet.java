@@ -34,11 +34,8 @@ public class WriteProductServelet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		
 		ProductVo pVo = new ProductVo();
 		ProductDao pDao = ProductDao.getInstance();
-		
-		
 		
 		int result = -1;
 		String savePath = "upload";

@@ -117,7 +117,6 @@ function checkCertification(){
 // 비밀번호와 비밀번호 확인이 맞는지 확인 및 비밀번호 설정값
 function checkIdPwd(){
 	var pwd = document.frm.idPwd.value;
-	var pwdCheck = document.frm.idPwdCheck.value;
 	var SC = ["!","@","#","$","%"];
 	var check_SC = 0;
  
@@ -126,6 +125,7 @@ function checkIdPwd(){
 	    document.frm.idPwd.value='';
 	}
 	for(var i=0;i<SC.length;i++){
+		// pwd 변수에 SC의 값이 들어있지 않다면 indexOf()는 -1을 반환
 	    if(pwd.indexOf(SC[i]) != -1){
 	        check_SC = 1;
 	    }
@@ -406,4 +406,11 @@ function updateE_walletPwd(){
 	}
 }
 	
-	
+// 비밀번호 변경 시 비밀번호가 맞는지 확인하는 함수
+function newPasswordCheck(){
+	if(document.frm.idPwd.value != document.frm.idPwdCheck.value){
+		alert('비밀번호가 일치하지 않습니다.');
+		frm.idPwdCheck.focus();
+		return false;
+	}
+}

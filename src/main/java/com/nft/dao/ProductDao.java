@@ -137,7 +137,7 @@ public class ProductDao {
 				pVo.setOwner(rs.getString("owner"));
 				pVo.setUnique_no(rs.getString("unique_no"));			// 컬럼명 code인 정보를 가져옴
 				pVo.setP_name(rs.getString("p_name"));		// DB에서 가져온 정보를 pVo객체에 저장
-				pVo.setPrice(rs.getInt("price"));
+				pVo.setPrice(rs.getDouble("price"));
 				pVo.setNftUrl(rs.getString("nftUrl"));
 				pVo.setDescription(rs.getString("description"));
 				pVo.setEdition(rs.getInt("edition"));
@@ -390,7 +390,7 @@ public class ProductDao {
 		public List<ProductVo> getProductList(String column, String keyword, int page) {
 			String sql = "SELECT * FROM ("
 					+ "SELECT ROWNUM N, b.* "
-					+ "FROM (SELECT * FROM nft_product where "+column+" like ? order by reg_date desc) b"
+					+ "FROM (SELECT * FROM nft_product where "+column+" like ? order by unique_no desc) b"
 					+ ") "
 					+ "WHERE N BETWEEN ? AND ?";
 			
@@ -453,7 +453,7 @@ public class ProductDao {
 			int count = 0;
 			String sql ="SELECT COUNT(unique_no) count FROM ("
 					+ "SELECT ROWNUM N, b.*"
-					+ "FROM (SELECT * FROM nft_product where "+column+" like ? order by reg_date desc) b"
+					+ "FROM (SELECT * FROM nft_product where "+column+" like ? order by unique_no desc) b"
 					+ ")";
 			
 			Connection conn = null;

@@ -32,11 +32,8 @@
 		<table class="table table-hover">
 			<thead class="thead-light">	
 				<tr>
-					<th class="text-center" style="width:10%">번호</th>
-					<th class="text-center" style="width:10%">작성자</th>
 					<th class="text-center" style="width:10%">제목</th>
 					<th class="text-center" style="width:10%">내용</th>
-					<th class="text-center" style="width:10%">작성일</th>
 					<th class="text-center" style="width:10%">관리</th>
 					<th class="text-center" style="width:10%">답변</th>
 				</tr>
@@ -45,11 +42,8 @@
 			<tbody>
 				<c:forEach var="qna" items="${qnaList}">
 					<tr>
-						<td class="text-center" style="width:10%">${qna.bno}</td>
-						<td class="text-center" style="width:10%">${qna.userid}</td>
 						<td class="text-center" style="width:10%">${qna.title}</td>
 						<td class="text-center" style="width:10%">${qna.content}</td>
-						<td class="text-center" style="width:10%">${qna.writeDate}</td>
 						<td class="text-center" style="width:10%">
 							<a href="deleteQna.do?bno=${qna.bno}">삭제</a>
 						</td>

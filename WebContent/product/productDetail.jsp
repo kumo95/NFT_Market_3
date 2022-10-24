@@ -31,7 +31,7 @@
 					<img class="img-fluid rounded-3 mb-5" src="images/noimage.jpg">
 				</c:when>
 				<c:otherwise>
-					<img class="img-fluid rounded-3 mb-5" src="upload/${product.nftUrl}">
+					<img class="img-fluid rounded-3 mb-5" src="upload/${product.nftUrl}" onerror="this.src='../upload/${newNftUrl}';"/>
 				</c:otherwise>
 				</c:choose>	
                 </div>
@@ -59,7 +59,7 @@
                             <h2 class="h5 mb-1">판매 정보</h2>
                                 <div>
                                     <div>
-                                        판매자 : ${product.creator}
+                                        창조자 : ${product.creator}
                                         <br>
                                         지금 보시는 상품은 #${product.edition} 입니다.
                                         <a class="text-decoration-none" href="#!">
@@ -225,7 +225,7 @@
 <!--  연관된 다른 아이템들 누를수 있도록 4개 상품 -->
     <section class="py-5 bg-light">
         <div class="container px-4 px-lg-5 mt-5">
-            <h2 class="fw-bolder mb-4">Creator 관련상품</h2>
+            <h2 class="fw-bolder mb-4">${product.creator} 관련상품</h2>
             
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
          	

@@ -20,7 +20,7 @@
     <div class="cart">
     <form name="orderform" id="orderform" method="post" class="orderform"  onsubmit="return false;">
         <div class="right-align basketrowcmd">
-            <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delCheckedItem();">선택상품삭제</a>
+<!--             <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delCheckedItem();">선택상품삭제</a> -->
             <a href="removeAllCart.do?userid=${loginUser.userid}" class="abutton" onclick="javascript:basket.delAllItem();">장바구니비우기</a>
         </div>
 		

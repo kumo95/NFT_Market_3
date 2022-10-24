@@ -35,8 +35,7 @@ public class MakeFileServlet extends HttpServlet {
 		
 //		ProductVo pVo = new ProductVo();
 //		ProductDao pDao = ProductDao.getInstance();
-		
-		
+			
 //		int result = -1;
 		String savePath = "upload";
 		ServletContext context = getServletContext();

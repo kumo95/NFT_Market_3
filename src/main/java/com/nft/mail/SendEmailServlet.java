@@ -96,11 +96,15 @@ public class SendEmailServlet extends HttpServlet {
 		
 			
 		// 인증 번호 생성기
+		// StringBuffer : 문자열을 추가하거나 변경 할 때 주로 사용하는 자료형
 		StringBuffer temp = new StringBuffer();
 		Random rnd = new Random();
+		// 10개의 대소문자 + 숫자 난수를 생성하는 코드
 		for (int i = 0; i < 10; i++) {
+			// random 함수를 사용하여 0,1,2를 랜덤으로 생성한 후 case를 실행
 			int rIndex = rnd.nextInt(3);
 			switch (rIndex) {
+			// char 형태로 랜덤 아스키코드를 temp 변수에 추가
 			case 0:
 				// a-z
 				temp.append((char) ((int) (rnd.nextInt(26)) + 97));
@@ -144,9 +148,10 @@ public class SendEmailServlet extends HttpServlet {
 			e.printStackTrace();// TODO: handle exception
 		}
 
-		// 세선설정
+		// 세션설정
 		HttpSession saveKey = request.getSession();
 		saveKey.setAttribute("AuthenticationKey", AuthenticationKey);
+		// 세션의 시간 설정
 		saveKey.setMaxInactiveInterval(5*60);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("member/signUp.jsp");

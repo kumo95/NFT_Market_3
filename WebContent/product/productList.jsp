@@ -47,7 +47,7 @@
 					<img class="card-img-top" src="images/noimage.jpg">
 				</c:when>
 				<c:otherwise>
-					<img class="card-img-top" src="upload/${product.nftUrl}">
+					<img class="card-img-top" src="upload/${product.nftUrl}" onerror="this.src='../upload/${product.nftUrl}';"/>
 				</c:otherwise>
 				</c:choose>
 				</a>
