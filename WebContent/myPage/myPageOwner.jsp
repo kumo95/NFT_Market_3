@@ -78,7 +78,7 @@
         <div class="content-area">
             
             <div class="content-title-list">
-                    <h2>나의NFT</h2>
+                    <h2>판매 NFT</h2>
                     <a href="">상세페이지</a>
                 </div>
                 <form>

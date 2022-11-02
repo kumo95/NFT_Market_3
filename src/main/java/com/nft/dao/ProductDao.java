@@ -159,7 +159,7 @@ public class ProductDao {
 		Connection conn = null;
 		
 		PreparedStatement pstmt = null;		// 동적 쿼리
-		String sql = "update nft_product set creator=?, owner=?, p_name=?, unique_no=? , price=?, description=?, edition=? ,reg_date=? where unique_no=?";			
+		String sql = "update nft_product set creator=?, owner=?, p_name=?, price=?, description=?, edition=?, reg_date=?, nfturl=? where unique_no=?";			
 		
 		try {
 
@@ -171,11 +171,13 @@ public class ProductDao {
 		pstmt.setString(1, pVo.getCreator());
 		pstmt.setString(2, pVo.getOwner());
 		pstmt.setString(3, pVo.getP_name());
+		//pstmt.setString(4, pVo.getUnique_no());
 		pstmt.setDouble(4, pVo.getPrice());
-		pstmt.setString(5, pVo.getNftUrl());
-		pstmt.setString(6, pVo.getDescription());
-		pstmt.setInt(7, pVo.getEdition());
-		pstmt.setDate(8, pVo.getReg_date());		// 날짜형
+		pstmt.setString(5, pVo.getDescription());
+		pstmt.setInt(6, pVo.getEdition());
+		pstmt.setDate(7, pVo.getReg_date());		// 날짜형
+		pstmt.setString(8, pVo.getNftUrl());
+		pstmt.setString(9, pVo.getUnique_no());
 		// (4단계)SQL문 실행 및 결과 처리
 		result = pstmt.executeUpdate();		// 쿼리 수행
 		

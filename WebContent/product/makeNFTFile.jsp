@@ -24,7 +24,7 @@
 <br>
 <br>
 <input type="submit" value="등록">
-<input type="reset" value="취소">
+<input type="reset" value="취소" onclick="history.back()">
 </form>
 
 </div>

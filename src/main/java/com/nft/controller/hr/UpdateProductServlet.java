@@ -71,10 +71,12 @@ public class UpdateProductServlet extends HttpServlet {
 			String creator = multi.getParameter("creator");
 			String owner = multi.getParameter("owner");
 			String unique_no = multi.getParameter("unique_no");
+			//int unique_no = Integer.parseInt(multi.getParameter("unique_no"));
 			String p_name = multi.getParameter("p_name");
 			//int price = Integer.parseInt(multi.getParameter("price"));
 			Double price = Double.parseDouble(multi.getParameter("price"));
-			String nftUrl = multi.getFilesystemName("nftUrl");
+			//String nftUrl = multi.getFilesystemName("nftUrl");
+			String nftUrl = multi.getParameter("nftUrl");
 			String description = multi.getParameter("description");
 			int edition = Integer.parseInt(multi.getParameter("edition"));
 			Date reg_date = Date.valueOf(multi.getParameter("reg_date"));
@@ -88,7 +90,7 @@ public class UpdateProductServlet extends HttpServlet {
 			pVo.setDescription(description);
 			pVo.setEdition(edition);
 			pVo.setReg_date(reg_date);
-		
+			System.out.println(pVo);
 		} catch (Exception e) {
 			System.out.println("파일 업로드간 예외 발생: " + e);
 		}

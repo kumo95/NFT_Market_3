@@ -59,6 +59,7 @@ public class WriteProductServelet extends HttpServlet {
 		String creator = multi.getParameter("creator");
 		String owner = multi.getParameter("owner");
 		String unique_no = multi.getParameter("unique_no");
+		//int unique_no = Integer.parseInt(multi.getParameter("unique_no"));
 		String p_name = multi.getParameter("p_name");
 		//int price = Integer.parseInt(multi.getParameter("price"));
 		Double price = Double.parseDouble(multi.getParameter("price"));

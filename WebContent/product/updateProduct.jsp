@@ -30,9 +30,25 @@
 						<td><input type="text" name="p_name" value="${product.p_name}"></td>
 					</tr>
 					<tr>
+						<th>creator</th>
+						<td><input type="text" name="creator" value="${product.creator}"></td>
+					</tr>
+					<tr>
+						<th>owner</th>
+						<td><input type="text" name="owner" value="${product.owner}"></td>
+					</tr>
+					<tr>
 						<th>가격</th>
 						<td><input type="text" name="price" value="${product.price}"></td>
 					</tr>
+					<tr>
+						<th>edition</th>
+						<td><input type="text" name="edition" value="${product.edition}"></td>
+					</tr>
+<%-- 					<tr>
+						<th>nftUrl</th>
+						<td><input type="file" name="nftUrl" value="${product.nftUrl}"></td>
+					</tr> --%>
 					<tr>
 						<th>설명</th>
 						<td><input type="text" name="description" value="${product.description}"></td>
@@ -46,6 +62,7 @@
 		</tr>
 	</table>
 	
+	<input type="hidden" name="nftUrl" value="${product.nftUrl}">
 	<input type="hidden" name="unique_no" value="${product.unique_no}">
 	<input type="submit" value="수정">
 	<input type="reset" value="취소">

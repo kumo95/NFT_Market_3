@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +27,15 @@ public class MakeBackgroundServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		MemberVo mVo = (MemberVo) session.getAttribute("loginUser");
 		
+		// 현재경로 가져오기
+//		String path = request.getContextPath();
+
+		// 업로드 경로 가져오기
+		String savePath = "upload";
+		ServletContext context = getServletContext();
+		String uploadFilePath = context.getRealPath(savePath);
+		System.out.println("저장파일 서버경로: "+uploadFilePath);
+		
 		// NFTURL 파일명을 다르게 설정하기 위해 새로운파일명(newNftUrl)을 userid+날짜+시간으로 설정
 		//date 쓰고 java.util.Date 임포트
 		Date d = new Date();
@@ -46,7 +56,7 @@ public class MakeBackgroundServlet extends HttpServlet {
 		String select = request.getParameter("select");
 		System.out.println(select);
 		Main main1 = new Main();
-		String newNftUrl = main1.makeNFT(nftUrl, fileName, select);
+		String newNftUrl = main1.makeNFT(nftUrl, fileName, select, uploadFilePath);
 		
 		request.setAttribute("nftUrl", nftUrl);
 		request.setAttribute("newNftUrl", newNftUrl);

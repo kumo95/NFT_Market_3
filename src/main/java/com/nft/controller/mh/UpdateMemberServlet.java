@@ -30,23 +30,30 @@ public class UpdateMemberServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");		// 포스트 방식 한글 설정
 		response.setContentType("text/html; charset=UTF-8");		
 		PrintWriter out = response.getWriter();	
-		
+		System.out.println("제발");
 		// 로그인 시 설정된 loginUser 세션을 불러와서 MemberVo에 할당
 		HttpSession session = request.getSession();
-		MemberVo mVo = (MemberVo) session.getAttribute("loginUser");
+		MemberVo mVo2 = (MemberVo) session.getAttribute("loginUser");
 
 		// 데이터베이스에 수정된 정보를 업데이트
-		String userid = mVo.getUserid();
+		String userid = mVo2.getUserid();
 		String idPwd = request.getParameter("newIdPwd");
 		String e_walletPwd = request.getParameter("newE_walletPwd");
 		String phone = request.getParameter("phone");
 		int email_agree = Integer.parseInt(request.getParameter("email_agree"));
 		int phone_agree = Integer.parseInt(request.getParameter("phone_agree"));
-		
+
 //		// 멤버Dao 객체를 생성 및 mVo에 데이터 삽입 후 updateMemeber 함수 실행
+		MemberVo mVo = new MemberVo();
+		mVo.setUserid(userid);
+		mVo.setIdPwd(idPwd);
+		mVo.setE_walletPwd(e_walletPwd);
+		mVo.setPhone(phone);
+		mVo.setEmail_agree(email_agree);
+		mVo.setPhone_agree(phone_agree);
+		
 		MemberDao mDao = MemberDao.getInstance();
 		int result = mDao.updateMember(mVo);
-		
 		
 		if(result == 1) {
 			out.println("<script>alert('개인정보변경에 성공했습니다.'); location.href='login.do';</script>\r\n");
@@ -57,12 +64,7 @@ public class UpdateMemberServlet extends HttpServlet {
 		}
 		
 //		// 블록체인 구현할때 쓸 코드		
-//		mVo.setUserid(userid);
-//		mVo.setIdPwd(idPwd);
-//		mVo.setE_walletPwd(e_walletPwd);
-//		mVo.setPhone(phone);
-//		mVo.setEmail_agree(email_agree);
-//		mVo.setPhone_agree(phone_agree);
+
 		
 		
 //		// 유저가 개인정보 변경을 하면 NFT지갑의 e_wallet 비밀번호도 변경
